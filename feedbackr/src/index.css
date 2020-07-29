@@ -1,0 +1,18 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+* {
+  font-family: Arial, Helvetica, sans-serif; }
+
+.navbar {
+  font-family: 'Times New Roman', Times, serif; }
+
+.navbar {
+  background-color: #2998ff;
+  color: #eee; }
+  .navbar ul {
+    display: flex; }
+    .navbar ul li {
+      padding: 30px;
+      list-style: none; }

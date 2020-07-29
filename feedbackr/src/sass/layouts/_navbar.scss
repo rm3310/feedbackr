@@ -1,0 +1,13 @@
+.navbar {
+  background-color: $color-primary;
+  color: $color-grey-light;
+  
+  ul {
+    display: flex;
+
+    li {
+      padding: 30px;
+      list-style: none;
+    }
+  }
+}

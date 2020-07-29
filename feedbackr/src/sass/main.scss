@@ -1,0 +1,18 @@
+// import abstracts
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+// import base
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+
+// import components
+@import "components/buttons";
+@import "components/forminput";
+
+// import layouts
+@import "layouts/navbar";
+
+// import pages
+@import "pages/create_question";
