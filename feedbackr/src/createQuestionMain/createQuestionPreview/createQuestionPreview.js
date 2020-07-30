@@ -2,7 +2,7 @@ import React from 'react';
 
 function CreateQuestionPreview (props) {
   return (
-    <p>hello</p>
+    <p>hello 30th Jul</p>
   )
 }
 

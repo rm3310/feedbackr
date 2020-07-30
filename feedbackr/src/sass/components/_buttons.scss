@@ -1,0 +1,21 @@
+.submit {
+  @include button;
+  background-color: $color-warm-light;
+  border-radius: 1rem;
+  color: $color-text-light;
+
+  &:hover {
+    background-color: $color-warm-mid;
+    cursor: pointer;
+  }
+}
+
+.add {
+  @include button;
+  background-color: $color-cool-light;
+
+  &:hover {
+    background-color: $color-cool-mid;
+    cursor: pointer;
+  }
+}

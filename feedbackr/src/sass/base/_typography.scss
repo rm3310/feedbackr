@@ -2,6 +2,22 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar {
-  font-family: 'Times New Roman', Times, serif;
+.question-builder {
+  
+  
+  &__input {
+    font-size: 1.6rem;
+
+    label {
+      color: $color-text-dark;
+    }
+    
+    input {
+      
+    }
+        
+    .answers {
+      
+    }
+  }
 }

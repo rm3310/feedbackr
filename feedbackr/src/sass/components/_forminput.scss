@@ -1,0 +1,32 @@
+.question-builder {
+  padding-top: 2rem;
+  width: 50%;
+  background-color: lighten($color-secondary, 10%);
+  
+  &__input {
+    display: grid;
+    grid-template-columns: [full-start] 1fr [text-start] 9fr [text-end] 1fr [input-start] 16fr [button-start] 2fr [input-end] 1fr [full-end];
+    align-items: center;
+    padding: .3rem;
+
+    label {
+      grid-column: text-start / text-end;
+      text-align: right;
+    }
+    
+    input {
+      grid-column: input-start / input-end;
+      border: none;
+      border-bottom: solid $color-tertiary .2rem;
+      padding: .7rem;
+    }
+        
+    .answers {
+      grid-column: input-start / button-start;
+    }
+
+    button {
+      align-self: stretch;
+    }
+  }
+}
