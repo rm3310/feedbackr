@@ -9,10 +9,13 @@ const db = [];
 function CreateQuestionMain (props) {
   
   const [ question, setQuestion ] = useState({
-    questionType: "", // need to create a library of question types
+    questionType: 1, // need to create a library of question types
     question: "",
     points: 0,
-    answerOptions: [""],
+    answerOptions: [{
+      value: 0,
+      label: ""
+    }],
     correctAnswer: "",
     tags: [],
     time: 0,

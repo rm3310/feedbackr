@@ -11,15 +11,14 @@ function CreateQuestionForm (props) {
   function handleSubmit (event) {
     event.preventDefault();
     handleQuestionSubmit(question);
-    console.log('question types',questionTypes);
     setQuestion({
-      questionType: "",
+      questionType: 1,
       question: "",
       points: 0,
       answerOptions: [
         {
-          label: "",
-          value: ""
+          value: 0,
+          label: ""
         }
       ],
       correctAnswer: "",
@@ -38,25 +37,14 @@ function CreateQuestionForm (props) {
     } else if (event.target.name === "answerOptions") {
       const array = [...question.answerOptions];
       array[index] = {
-        value: value,
+        value: index,
         label: value
       }
-
-      console.log('new array', array)
-
       setQuestion({
         ...question,
         [event.target.name]: array
       })
     }
-  }
-  
-  function handleSelect (event) {
-    const name = event.name;
-    setQuestion({
-      ...question,
-      [event.name]: event.value
-    })
   }
 
   function handleAdd (event, index) {
@@ -86,27 +74,18 @@ function CreateQuestionForm (props) {
   return (
     <form className="question-builder" onSubmit={handleSubmit}>
       <div className="question-builder__input">
-        <label>Test Question type</label>
-        <Select
-          onChange={handleSelect}
-          className="select"
-          options={questionTypes}
-          isSearchable
-        ></Select>
-      </div>
-
-      <div className="question-builder__input">
         <label>Test 2 Question type</label>
-        <select
-          onChange={handleSelect}
+        <div
+          onChange={handleChange}
           className="select"
-          options={questionTypes}
-          isSearchable
         >
           {questionTypes.map((option, index) => (
-            <option value="option.value">{option.label}</option>
+            <label>
+              {option.label}
+              <input type="radio" key={index} value={option.value} name="questionType" defaultChecked={index === 0}/>
+            </label>
           ))}
-        </select>
+        </div>
       </div>
 
       <div className="question-builder__input">
@@ -130,13 +109,12 @@ function CreateQuestionForm (props) {
       </div>
 
       {question.answerOptions.map((option, index) => (
-          <div key={index} className="question-builder__input">
-            <label>Answer options {index+1}</label>
+          <div key={index} className="question-builder__input"> 
+            <label>Answer option {String.fromCharCode(index+65)}</label>
             <input
               className="answers"
-              type="text"
               name="answerOptions"
-              value={option.value}
+              value={option.label}
               onChange={(event) => handleChange(event, index)}
             ></input>
             <button
@@ -146,6 +124,7 @@ function CreateQuestionForm (props) {
               onClick={(event) => handleAdd(event, index)}
             >+</button>
             <button
+              type="button"
               className="remove"
               name="answerOptions"
               onClick={(event) => handleRemove(event, index)}>-</button>
@@ -155,11 +134,15 @@ function CreateQuestionForm (props) {
 
       <div className="question-builder__input">
         <label>Correct answer</label>
-        <Select
-          name="correctAnswer"
+        <select
+          onChange={handleChange}
           className="select"
-          options={question.answerOptions}
-        ></Select>
+          name="correctAnswer"
+        ><option value={""}></option>
+          {question.answerOptions.map((option, index) => (
+            <option key={index} value={option.value}>{`${String.fromCharCode(index+65)}: ${option.label}`}</option>
+          ))}
+        </select>
       </div>
       
       <div className="question-builder__input">
