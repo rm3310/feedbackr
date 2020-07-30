@@ -1,4 +1,6 @@
 import React from 'react';
+import { questionTypes } from '../../questionTypeLibrary/questionTypeLibrary';
+import Select from 'react-select';
 
 function CreateQuestionForm (props) {
 
@@ -9,18 +11,24 @@ function CreateQuestionForm (props) {
   function handleSubmit (event) {
     event.preventDefault();
     handleQuestionSubmit(question);
+    console.log('question types',questionTypes);
     setQuestion({
       questionType: "",
       question: "",
       points: 0,
-      answerOptions: [],
+      answerOptions: [
+        {
+          label: "",
+          value: ""
+        }
+      ],
       correctAnswer: "",
       tags: [],
       time: 0,
     })
   }
   
-  function handleChange (event) {
+  function handleChange (event, index) {
     const value = event.target.value;
     if (event.target.name !== "answerOptions") {
       setQuestion({
@@ -28,15 +36,49 @@ function CreateQuestionForm (props) {
         [event.target.name]: value
       })
     } else if (event.target.name === "answerOptions") {
+      const array = [...question.answerOptions];
+      array[index] = {
+        value: value,
+        label: value
+      }
+
+      console.log('new array', array)
+
       setQuestion({
         ...question,
-        [event.target.name]: [...question.answerOptions, value]
-      })   
+        [event.target.name]: array
+      })
     }
   }
   
-  function handleAdd () {
+  function handleSelect (event) {
+    const name = event.name;
+    setQuestion({
+      ...question,
+      [event.name]: event.value
+    })
+  }
 
+  function handleAdd (event, index) {
+    const name = event.target.name;
+    const array = [...question[name]];
+    console.log('array', array);
+    array.splice(index+1,0,"");
+    setQuestion({
+      ...question,
+      [event.target.name]: array
+    })
+  }
+
+  function handleRemove (event, index) {
+    const name = event.target.name;
+    const array = [...question[name]];
+    array.splice(index,1);
+    console.log('array', array);
+    setQuestion({
+      ...question,
+      [event.target.name]: array
+    })
   }
 
   console.log('question', question);
@@ -44,13 +86,27 @@ function CreateQuestionForm (props) {
   return (
     <form className="question-builder" onSubmit={handleSubmit}>
       <div className="question-builder__input">
-        <label>Question type</label>
-        <input
-          type="text"
-          name="questionType"
-          value={question.questionType}
-          onChange={handleChange}
-        ></input>
+        <label>Test Question type</label>
+        <Select
+          onChange={handleSelect}
+          className="select"
+          options={questionTypes}
+          isSearchable
+        ></Select>
+      </div>
+
+      <div className="question-builder__input">
+        <label>Test 2 Question type</label>
+        <select
+          onChange={handleSelect}
+          className="select"
+          options={questionTypes}
+          isSearchable
+        >
+          {questionTypes.map((option, index) => (
+            <option value="option.value">{option.label}</option>
+          ))}
+        </select>
       </div>
 
       <div className="question-builder__input">
@@ -73,29 +129,37 @@ function CreateQuestionForm (props) {
         ></input>
       </div>
 
-      <div className="question-builder__input">
-        <label>Answer options</label>
-        <input
-          className="answers"
-          type="text"
-          name="answerOptions"
-          value={question.answerOptions[-1]}
-          onChange={handleChange}
-        ></input>
-        <button className= "add" onClick={handleAdd}>+</button>
-        <ul>
-
-        </ul>
-      </div>
+      {question.answerOptions.map((option, index) => (
+          <div key={index} className="question-builder__input">
+            <label>Answer options {index+1}</label>
+            <input
+              className="answers"
+              type="text"
+              name="answerOptions"
+              value={option.value}
+              onChange={(event) => handleChange(event, index)}
+            ></input>
+            <button
+              type="button"
+              className="add"
+              name="answerOptions"
+              onClick={(event) => handleAdd(event, index)}
+            >+</button>
+            <button
+              className="remove"
+              name="answerOptions"
+              onClick={(event) => handleRemove(event, index)}>-</button>
+          </div>
+        ))
+      }
 
       <div className="question-builder__input">
         <label>Correct answer</label>
-        <input
-          type="text"
+        <Select
           name="correctAnswer"
-          value={question.correctAnswer}
-          onChange={handleChange}
-        ></input>
+          className="select"
+          options={question.answerOptions}
+        ></Select>
       </div>
       
       <div className="question-builder__input">
@@ -103,7 +167,6 @@ function CreateQuestionForm (props) {
         <input
           type="text"
           name="tags"
-          multiple
           value={question.tags}
           onChange={handleChange}
         ></input>

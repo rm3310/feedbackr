@@ -39,7 +39,7 @@ html {
 .question-builder {
   padding-top: 2rem;
   width: 50%;
-  background-color: #bee1f9; }
+  background-color: #dff0fc; }
   .question-builder__input {
     display: grid;
     grid-template-columns: [full-start] 1fr [text-start] 9fr [text-end] 1fr [input-start] 16fr [button-start] 2fr [input-end] 1fr [full-end];
@@ -55,6 +55,8 @@ html {
       padding: .7rem; }
     .question-builder__input .answers {
       grid-column: input-start / button-start; }
+    .question-builder__input .select {
+      grid-column: input-start / input-end; }
     .question-builder__input button {
       align-self: stretch; }
 

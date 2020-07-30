@@ -25,6 +25,10 @@
       grid-column: input-start / button-start;
     }
 
+    .select {
+      grid-column: input-start / input-end;
+    }
+
     button {
       align-self: stretch;
     }
