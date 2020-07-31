@@ -5,6 +5,7 @@ import CreateQuestionForm from './createQuestionForm/createQuestionForm';
 import CreateQuestionPreview from './createQuestionPreview/createQuestionPreview';
 
 const db = [];
+// const fullquestion
 
 function CreateQuestionMain (props) {
   
@@ -22,6 +23,7 @@ function CreateQuestionMain (props) {
   })
 
   const handleQuestionSubmit = function (question) {
+    
     db.push(question);
     // will use fetch to send to backend and save in database
 

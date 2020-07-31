@@ -42,23 +42,38 @@ html {
   background-color: #dff0fc; }
   .question-builder__input {
     display: grid;
-    grid-template-columns: [full-start] 1fr [text-start] 9fr [text-end] 1fr [input-start] 16fr [button-start] 2fr [input-end] 1fr [full-end];
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
     align-items: center;
     padding: .3rem; }
     .question-builder__input label {
-      grid-column: text-start / text-end;
+      grid-column: 2 / 5;
       text-align: right; }
     .question-builder__input input {
-      grid-column: input-start / input-end;
+      grid-column: 5 / 12;
       border: none;
       border-bottom: solid #F3D250 0.2rem;
       padding: .7rem; }
     .question-builder__input .answers {
-      grid-column: input-start / button-start; }
+      grid-column: 5 / 10; }
     .question-builder__input .select {
-      grid-column: input-start / input-end; }
-    .question-builder__input button {
+      grid-column: 5 / 12;
+      display: flex;
+      justify-content: space-evenly; }
+      .question-builder__input .select label input {
+        margin: 0 1rem 0 3rem; }
+    .question-builder__input .add {
+      grid-column: 10 / 11;
       align-self: stretch; }
+    .question-builder__input .remove {
+      grid-column: 11 / 12;
+      align-self: stretch; }
+    .question-builder__input .dropdown {
+      grid-column: 5 / 12; }
+  .question-builder .next {
+    grid-column: 1 / 6; }
+  .question-builder .submit {
+    grid-column: 6 / 13; }
 
 .navbar {
   background-color: #5DA2D2;

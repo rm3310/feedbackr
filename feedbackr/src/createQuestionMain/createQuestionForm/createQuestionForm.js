@@ -1,6 +1,9 @@
 import React from 'react';
 import { questionTypes } from '../../questionTypeLibrary/questionTypeLibrary';
-import Select from 'react-select';
+
+// Question Type Components
+import MultipleChoice from '../../questionTypeLibrary/multipleChoice';
+import WrittenText from '../../questionTypeLibrary/writtenText';
 
 function CreateQuestionForm (props) {
 
@@ -69,20 +72,30 @@ function CreateQuestionForm (props) {
     })
   }
 
+  function renderAnswer (questionType, question, handleChange, handleAdd, handleRemove) {
+    if (questionType === 1) {
+      return <WrittenText handleChange={handleChange} question={question}/>
+    } else if (questionType === 2) {
+      return <MultipleChoice handleChange={handleChange} handleAdd={handleAdd} handleRemove={handleRemove} question={question}/>
+    } 
+  }
+
   console.log('question', question);
 
   return (
     <form className="question-builder" onSubmit={handleSubmit}>
+      {/* Information regarding the question itself */}
+      <h3>Question information</h3>
       <div className="question-builder__input">
-        <label>Test 2 Question type</label>
+        <label>Question type</label>
         <div
           onChange={handleChange}
           className="select"
         >
           {questionTypes.map((option, index) => (
             <label>
-              {option.label}
               <input type="radio" key={index} value={option.value} name="questionType" defaultChecked={index === 0}/>
+              {option.label}
             </label>
           ))}
         </div>
@@ -97,7 +110,12 @@ function CreateQuestionForm (props) {
           onChange={handleChange}
         ></input>
       </div>
+      
+      <h3>Answer options</h3>
+      {renderAnswer(question.questionType, question, handleChange, handleAdd, handleRemove)}
 
+      {/* Meta-data regarding question */}
+      <h3>Question Metadata</h3>
       <div className="question-builder__input">
         <label>Points</label>
         <input
@@ -108,43 +126,6 @@ function CreateQuestionForm (props) {
         ></input>
       </div>
 
-      {question.answerOptions.map((option, index) => (
-          <div key={index} className="question-builder__input"> 
-            <label>Answer option {String.fromCharCode(index+65)}</label>
-            <input
-              className="answers"
-              name="answerOptions"
-              value={option.label}
-              onChange={(event) => handleChange(event, index)}
-            ></input>
-            <button
-              type="button"
-              className="add"
-              name="answerOptions"
-              onClick={(event) => handleAdd(event, index)}
-            >+</button>
-            <button
-              type="button"
-              className="remove"
-              name="answerOptions"
-              onClick={(event) => handleRemove(event, index)}>-</button>
-          </div>
-        ))
-      }
-
-      <div className="question-builder__input">
-        <label>Correct answer</label>
-        <select
-          onChange={handleChange}
-          className="select"
-          name="correctAnswer"
-        ><option value={""}></option>
-          {question.answerOptions.map((option, index) => (
-            <option key={index} value={option.value}>{`${String.fromCharCode(index+65)}: ${option.label}`}</option>
-          ))}
-        </select>
-      </div>
-      
       <div className="question-builder__input">
         <label>Tags</label>
         <input
@@ -164,9 +145,11 @@ function CreateQuestionForm (props) {
           onChange={handleChange}
         ></input>
       </div>
-
-      {/* <button>Add next part</button> */}
-      <input type="submit" value="Create new Question" className="submit"></input>
+      
+      <div className="question-builder__input">
+        <button type="button" className="next">Add next part</button>
+        <input type="submit" value="Create new Question" className="submit"></input>
+      </div>
     </form>
   )
 }
