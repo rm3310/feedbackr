@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 
 // import children
-import CreateQuestionForm from './createQuestionForm/createQuestionForm';
-import CreateQuestionPreview from './createQuestionPreview/createQuestionPreview';
+import CreateQuestionForm from './CreateQuestionForm/createQuestionForm';
+import CreateQuestionPreview from './CreateQuestionPreview/createQuestionPreview';
 
 const db = [];
-// const fullquestion
 
 function CreateQuestionMain (props) {
   
-  const [ question, setQuestion ] = useState({
-    questionType: 1, // need to create a library of question types
+  const questionInitialState = { // object form initial question state
+    questionType: 1,
     question: "",
     points: 0,
     answerOptions: [{
@@ -20,11 +19,13 @@ function CreateQuestionMain (props) {
     correctAnswer: "",
     tags: [],
     time: 0,
-  })
+  }
 
-  const handleQuestionSubmit = function (question) {
+  const [ question, setQuestion ] = useState(questionInitialState)
+
+  const handleQuestionSubmit = function (fullQuestion) {
     
-    db.push(question);
+    db.push(fullQuestion);
     // will use fetch to send to backend and save in database
 
     console.log(db);
@@ -33,7 +34,7 @@ function CreateQuestionMain (props) {
   return (
     <div>
       <CreateQuestionForm handleQuestionSubmit={handleQuestionSubmit} question={question} setQuestion={setQuestion}/>
-      <CreateQuestionPreview/>
+      <CreateQuestionPreview question={question} />
     </div>
   )
 }
