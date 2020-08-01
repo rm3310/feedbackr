@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
 
-// import children
-import CreateQuestionForm from './CreateQuestionForm/createQuestionForm';
-import CreateQuestionPreview from './CreateQuestionPreview/createQuestionPreview';
+// 
+import CreateQuiz from '../CreateQuiz/createQuiz';
 
-const db = [];
+// import children
+import CreateQuestionForm from '../CreateQuestionForm/createQuestionForm';
+import CreateQuestionPreview from '../CreateQuestionPreview/createQuestionPreview';
+
+
 
 function CreateQuestionMain (props) {
   
+  const quiz = props.quiz;
+  const setQuiz = props.setQuiz;
+  const db = props.db;
+  const setDb = props.setDb
+
   const questionInitialState = { // object form initial question state
     questionType: 1,
     question: "",
@@ -16,7 +24,7 @@ function CreateQuestionMain (props) {
       value: 0,
       label: ""
     }],
-    correctAnswer: "",
+    correctAnswer: null,
     tags: [],
     time: 0,
   }
@@ -24,16 +32,23 @@ function CreateQuestionMain (props) {
   const [ question, setQuestion ] = useState(questionInitialState)
 
   const handleQuestionSubmit = function (fullQuestion) {
-    
-    db.push(fullQuestion);
+    setQuiz((question)=>[...question, fullQuestion])
     // will use fetch to send to backend and save in database
 
+    console.log(quiz);
+  }
+
+  const handleQuizSubmit = function () {
+    setDb((quizzes)=>[...quizzes, quiz]);
+    setQuiz([]);
     console.log(db);
   }
   
   return (
     <div>
       <CreateQuestionForm handleQuestionSubmit={handleQuestionSubmit} question={question} setQuestion={setQuestion}/>
+      <button onClick={handleQuizSubmit}>Save Quiz</button>
+      <CreateQuiz quiz={quiz} />
       <CreateQuestionPreview question={question} />
     </div>
   )

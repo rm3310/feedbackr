@@ -1,9 +1,22 @@
 import React from 'react';
 
+import QuestionCard from '../QuestionCard/questioncard';
+import MultipleChoicePreview from '../QuestionPreviewLibrary/multipleChoicePreview'
+
 function CreateQuiz (props) {
 
+  const quiz = props.quiz
+
   return (
-    <p>hello quiz creator</p>
+    <form>
+      {quiz.map((question, index)=>(
+      <div key={index}>
+        <span>{index+1}:</span>
+        <MultipleChoicePreview question={question} />
+      </div>
+      ))}
+      <button type="submit">submit</button>
+    </form>
   )
 }
 
