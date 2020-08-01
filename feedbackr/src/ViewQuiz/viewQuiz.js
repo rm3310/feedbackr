@@ -3,7 +3,7 @@ import React from 'react';
 import QuestionCard from '../QuestionCard/questioncard';
 import MultipleChoicePreview from '../QuestionPreviewLibrary/multipleChoicePreview'
 
-function CreateQuiz (props) {
+function ViewQuiz (props) {
 
   const quiz = props.quiz
 
@@ -20,4 +20,4 @@ function CreateQuiz (props) {
   )
 }
 
-export default CreateQuiz;
+export default ViewQuiz;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // 
-import CreateQuiz from '../CreateQuiz/createQuiz';
+import ViewQuiz from '../ViewQuiz/viewQuiz';
 
 // import children
 import CreateQuestionForm from '../CreateQuestionForm/createQuestionForm';
@@ -9,7 +9,7 @@ import CreateQuestionPreview from '../CreateQuestionPreview/createQuestionPrevie
 
 
 
-function CreateQuestionMain (props) {
+function CreateQuizMain (props) {
   
   const quiz = props.quiz;
   const setQuiz = props.setQuiz;
@@ -45,13 +45,19 @@ function CreateQuestionMain (props) {
   }
   
   return (
-    <div>
-      <CreateQuestionForm handleQuestionSubmit={handleQuestionSubmit} question={question} setQuestion={setQuestion}/>
-      <button onClick={handleQuizSubmit}>Save Quiz</button>
-      <CreateQuiz quiz={quiz} />
-      <CreateQuestionPreview question={question} />
+    <div className="create-quiz-main">
+      <div className="create-quiz-main__create-question-form">
+        <CreateQuestionForm handleQuestionSubmit={handleQuestionSubmit} question={question} setQuestion={setQuestion}/>
+        <button onClick={handleQuizSubmit}>Save Quiz</button>
+      </div>
+
+      <div className="create-quiz-main__quiz-preview">
+        <h2>Quiz preview</h2>
+        <ViewQuiz quiz={quiz} />
+        <CreateQuestionPreview question={question} />
+      </div>
     </div>
   )
 }
 
-export default CreateQuestionMain;
+export default CreateQuizMain;

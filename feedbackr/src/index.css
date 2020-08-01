@@ -36,10 +36,33 @@ html {
     background-color: #5c940d;
     cursor: pointer; }
 
+.question-builder__input {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  padding: .3rem; }
+  .question-builder__input label {
+    text-align: right; }
+  .question-builder__input input {
+    border: none;
+    border-bottom: solid #F3D250 0.2rem;
+    padding: .7rem; }
+
+.navbar {
+  background-color: #5DA2D2;
+  color: #333; }
+  .navbar ul {
+    display: flex; }
+    .navbar ul li {
+      padding: 30px;
+      list-style: none; }
+
+.create-quiz-main {
+  display: flex; }
+
 .question-builder {
-  padding-top: 2rem;
-  width: 50%;
-  background-color: #dff0fc; }
+  background-color: #b1dbf7; }
   .question-builder__input {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -47,13 +70,9 @@ html {
     align-items: center;
     padding: .3rem; }
     .question-builder__input label {
-      grid-column: 2 / 5;
-      text-align: right; }
+      grid-column: 2 / 5; }
     .question-builder__input input {
-      grid-column: 5 / 12;
-      border: none;
-      border-bottom: solid #F3D250 0.2rem;
-      padding: .7rem; }
+      grid-column: 5 / 12; }
     .question-builder__input .answers {
       grid-column: 5 / 10; }
     .question-builder__input .select {
@@ -70,16 +89,3 @@ html {
       align-self: stretch; }
     .question-builder__input .dropdown {
       grid-column: 5 / 12; }
-  .question-builder .next {
-    grid-column: 1 / 6; }
-  .question-builder .submit {
-    grid-column: 6 / 13; }
-
-.navbar {
-  background-color: #5DA2D2;
-  color: #333; }
-  .navbar ul {
-    display: flex; }
-    .navbar ul li {
-      padding: 30px;
-      list-style: none; }

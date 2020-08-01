@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Component imports
 import NavBar from './Navbar/navbar'
-import CreateQuestionMain from './CreateQuestionMain/createQuestionMain';
-import CreateQuiz from './CreateQuiz/createQuiz'
+import CreateQuizMain from './CreateQuizMain/createQuizMain';
+import ViewQuiz from './ViewQuiz/viewQuiz'
 
 function App() {
 
@@ -36,8 +36,8 @@ function App() {
     <Router>
       <div className="App">
         <NavBar/>
-        <Route path="/create-quiz" render={(props)=> <CreateQuestionMain {...props} quiz={quiz} setQuiz={setQuiz} db={db} setDb={setDb}/>}></Route>
-        <Route path="/view-quiz" render={(props)=><CreateQuiz {...props} quiz={quiz}/>}></Route>
+        <Route path="/create-quiz" render={(props)=> <CreateQuizMain {...props} quiz={quiz} setQuiz={setQuiz} db={db} setDb={setDb}/>}></Route>
+        <Route path="/view-quiz" render={(props)=><ViewQuiz {...props} quiz={quiz}/>}></Route>
       </div>
     </Router>  
   );
