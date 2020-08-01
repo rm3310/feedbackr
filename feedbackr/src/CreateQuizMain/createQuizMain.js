@@ -7,8 +7,6 @@ import ViewQuiz from '../ViewQuiz/viewQuiz';
 import CreateQuestionForm from '../CreateQuestionForm/createQuestionForm';
 import CreateQuestionPreview from '../CreateQuestionPreview/createQuestionPreview';
 
-
-
 function CreateQuizMain (props) {
   
   const quiz = props.quiz;
@@ -54,7 +52,7 @@ function CreateQuizMain (props) {
       <div className="create-quiz-main__quiz-preview">
         <h2>Quiz preview</h2>
         <ViewQuiz quiz={quiz} />
-        <CreateQuestionPreview question={question} />
+        {/* <CreateQuestionPreview question={question} /> */}
       </div>
     </div>
   )

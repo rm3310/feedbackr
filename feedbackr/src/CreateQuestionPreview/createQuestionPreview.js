@@ -7,7 +7,7 @@ function CreateQuestionPreview (props) {
   const question = props.question;
 
   return (
-    <MultipleChoicePreview question={question} />
+    <MultipleChoicePreview question={question}/>
   )
 }
 

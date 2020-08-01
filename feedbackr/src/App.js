@@ -37,7 +37,7 @@ function App() {
       <div className="App">
         <NavBar/>
         <Route path="/create-quiz" render={(props)=> <CreateQuizMain {...props} quiz={quiz} setQuiz={setQuiz} db={db} setDb={setDb}/>}></Route>
-        <Route path="/view-quiz" render={(props)=><ViewQuiz {...props} quiz={quiz}/>}></Route>
+        <Route path="/view-quiz" render={(props)=> <ViewQuiz {...props} quiz={quiz}/>}></Route>
       </div>
     </Router>  
   );
