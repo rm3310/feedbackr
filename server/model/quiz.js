@@ -1,5 +1,4 @@
 const mongoose = require('./index.js');
-// const Questions = require('./question.js');
 
 const Schema = mongoose.Schema;
 
@@ -19,7 +18,8 @@ const QuestionSchema = new Schema({
 const QuizSchema = new Schema({
   name: {type: String, required: true, unique:true},
   tags: {type: String},
-  questions: [QuestionSchema]
+  questions: [QuestionSchema],
+  posted: {type:Date, default: Date.now()}
 });
 
 module.exports = mongoose.model('Quizzes', QuizSchema);

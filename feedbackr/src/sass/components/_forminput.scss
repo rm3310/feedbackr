@@ -12,12 +12,13 @@
   input {
     grid-column: 4 / -2;
     border: none;
-    border-bottom: solid $color-tertiary .2rem;
-    padding: .7rem;
+    border-bottom: solid $color-primary .2rem;
+    padding: .5rem;
+    font-size: 1.4rem;
 
     &:focus {
       border: none;
-      border-bottom: solid $color-alert .3rem;
+      border-bottom: solid $color-cool-mid .3rem;
       outline: none;
       transition: all .2s;
     }
@@ -26,12 +27,13 @@
   select {
     grid-column: 4 / -2;
     border: none;
-    border-bottom: solid $color-tertiary .2rem;
-    padding: .7rem;
+    border-bottom: solid $color-primary .2rem;
+    padding: .5rem;
+    font-size: 1.4rem;
 
     &:focus {
       border: none;
-      border-bottom: solid $color-alert .3rem;
+      border-bottom: solid $color-cool-mid .3rem;
       outline: none;
       transition: all .2s;
     }
@@ -47,12 +49,12 @@
   input {
     grid-column: 4 / -4;
     border: none;
-    border-bottom: solid $color-tertiary .2rem;
+    border-bottom: solid $color-primary .2rem;
     padding: .7rem;
 
     &:focus {
       border: none;
-      border-bottom: solid $color-alert .3rem;
+      border-bottom: solid $color-cool-mid .3rem;
       outline: none;
       transition: all .2s;
     }
@@ -62,5 +64,9 @@
     grid-column: 2 / 3;
     text-align: right;
     font-size: 1.5rem;
+  }
+
+  button {
+    align-self: stretch;
   }
 }

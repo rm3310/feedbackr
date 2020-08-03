@@ -1,13 +1,20 @@
 .navbar {
-  background-color: $color-primary;
+  background-image: linear-gradient(to right, #fff, $color-warm-mid);
   text-decoration: none;
   color: $color-text-light;
-  position: fixed;
-  transform: translateY(-3rem) translateX(-3rem);
-  width: 100%;
-  
+  position: sticky;
+  // transform: translateY(-3rem) translateX(-3rem);
+  width: 100vw;
+  display: flex;
+
+  .logo {
+    margin-right: auto;
+    height: fit-content;
+  }
+
   ul {
     display: flex;
+    margin-left: auto;
 
     li {
       padding: 3rem;

@@ -30,16 +30,16 @@ function CreateQuizForm (props) {
 
   const handleCreateQuiz = function () {
     postQuiz(quiz, setQuizId);
-    console.log(quizId);
+    const element = document.getElementById('details');
+
   }
 
   return (
-    <div className="create-quiz__details">
-      <div className="create-quiz__details__container modal"></div>
-      <p>Quiz Name*</p>
+    <div id="details" className="create-quiz__details modal">
+      <p>Quiz Name:</p>
       <input type="text" value={quiz.name} onChange={handleQuizName} required></input>
-      <button onClick={handleCreateQuiz} className="modal-container">Create Quiz</button>
-      </div>
+      <button onClick={handleCreateQuiz} id="create-quiz" className="modal-container">Create Quiz</button>
+    </div>
   )
 }
 

@@ -12,6 +12,18 @@ const getQuizzes = async function (req, res) {
   }
 }
 
+const getOneQuiz = async function (req, res) {
+  try {
+    const quiz = await Quizzes.findById(req.body.quizId);
+    res.json(quiz);
+    res.status(200);
+  } catch (error) {
+    console.log(error); // eslint-disable-line no-console
+    res.status(500);
+    res.json(error);
+  }
+}
+
 const postQuiz = async function (req, res) {
   try {
     const newQuiz = {
@@ -20,6 +32,22 @@ const postQuiz = async function (req, res) {
       questions: req.body.questions
     }
     const quiz = await Quizzes.create(newQuiz);
+    res.json(quiz);
+    res.status(204);
+  } catch (error) {
+    console.log(error); // eslint-disable-line no-console
+    res.status(500);
+    res.json(error);
+  }
+}
+
+const updateQuiz = async function (req, res) {
+  try {
+    const newQuiz = {
+      name: req.body.name,
+      tags: req.body.tags,
+    }
+    const quiz = await Quizzes.findByIdAndUpdate(req.body.quizId, newQuiz);
     res.json(quiz);
     res.status(204);
   } catch (error) {
@@ -61,6 +89,8 @@ const postQuestion = async function (req, res) {
 
 module.exports = {
   getQuizzes,
+  getOneQuiz,
   postQuiz,
+  updateQuiz,
   postQuestion
 }

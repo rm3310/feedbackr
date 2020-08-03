@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Component imports
 import NavBar from './Navbar/navbar'
 import CreateQuizMain from './CreateQuizMain/createQuizMain';
-import ViewQuiz from './ViewQuiz/viewQuiz'
-import { getAllQuizzes, postQuiz, updateQuiz, postQuestion } from './apiService'
+import DoQuiz from './DoQuiz/doQuiz'
+import QuizList from './QuizList/quizList'
+import { getAllQuizzes } from './apiService'
 
 function App() {
   
@@ -20,14 +21,14 @@ function App() {
   useEffect(()=>{
     getAllQuizzes(setDb);
   },[]);
-  console.log('db from database', db);
 
   return (
     <Router>
       <div className="App">
         <NavBar/>
         <Route path="/create-quiz" render={(props)=> <CreateQuizMain {...props} quiz={quiz} setQuiz={setQuiz} db={db} setDb={setDb}/>}></Route>
-        <Route path="/view-quiz" render={(props)=> <ViewQuiz {...props} quiz={quiz}/>}></Route>
+        <Route path="/do-quiz" render={(props)=> <DoQuiz {...props} quiz={quiz}/>}></Route>
+        <Route path="/view-quizzes" render={(props)=> <QuizList {...props} quizList={db}/>}></Route>
         {/* footer */}
       </div>
     </Router>  

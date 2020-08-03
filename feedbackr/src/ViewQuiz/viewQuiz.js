@@ -12,8 +12,6 @@ function ViewQuiz (props) {
     }
   })));
 
-  // console.log('Script render quizAnswers: ', quizAnswers);
-
   const handleQuizSubmit = function (event) {
     event.preventDefault();
     console.log("quiz answers on quiz submit", quizAnswers);

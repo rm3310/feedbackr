@@ -59,7 +59,6 @@ function CreateQuizMain (props) {
       
       <div className="create-quiz__create-question-form">
         <CreateQuestionForm handleQuestionSubmit={handleQuestionSubmit} question={question} setQuestion={setQuestion} questionInitialState={questionInitialState}/>
-        <button onClick={handleSaveQuiz}>Update quiz details</button>
       </div>
 
       <div className="create-quiz__quiz-preview">
