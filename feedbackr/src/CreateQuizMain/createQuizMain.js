@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 
 // Functions
-import { getAllQuizzes, postQuiz, updateQuiz, postQuestion, getOneQuiz } from '../apiService'
+import { updateQuiz, postQuestion, getOneQuiz } from '../apiService'
 
 // Components
 import ViewQuiz from '../ViewQuiz/viewQuiz';
 import CreateQuestionForm from '../CreateQuestionForm/createQuestionForm';
 import CreateQuestionPreview from '../CreateQuestionPreview/createQuestionPreview';
+import CreateQuizForm from '../CreateQuizForm/createQuizForm';
 
 function CreateQuizMain (props) {
-  let quizId = null;
-  const quiz = props.quiz;
-  const setQuiz = props.setQuiz;
-  const db = props.db;
-  const setDb = props.setDb;
-
   const questionInitialState = { // object form initial question state
     questionType: 1,
     question: "",
@@ -28,23 +23,22 @@ function CreateQuizMain (props) {
     time: 0,
   }
 
-  const [ question, setQuestion ] = useState(questionInitialState)
+  const [ quizId, setQuizId ] = useState("");
+  const [ question, setQuestion ] = useState(questionInitialState);
+  const quiz = props.quiz;
+  const setQuiz = props.setQuiz;
+  const db = props.db;
+  const setDb = props.setDb;
+
 
   const handleQuestionSubmit = function (newQuestion) {
-    setQuiz(prevState => {
-      const questions = [...prevState.questions, newQuestion]
-      const newState = {...prevState, questions: questions}
-      return newState
-    });
-
-    console.log('quiz after question submit',quiz);
     const newQuestionToDb = {
       quizId: quizId,
       question: newQuestion
     }
-    // postQuestion(newQuestionToDb);
-    // 
-    // then get one quiz and setQuiz by that
+    postQuestion(newQuestionToDb);
+    getOneQuiz(quizId, setQuiz);
+    console.log('quiz after question added', quiz);
   }
 
   const handleSaveQuiz = function () {
@@ -56,54 +50,13 @@ function CreateQuizMain (props) {
       name: quiz.name,
       tags: quiz.tags
     }
-    // updateQuiz(update);
-  }
-
-  const handleQuizName = function (event) {
-    event.persist();
-    setQuiz(prevState => {
-      const newState = {
-        ...prevState,
-        name: event.target.value
-      }
-      return newState;
-    })
-    console.log('quiz after name change', quiz);
-  }
-
-  const handleQuizTags = function (event) {
-    event.persist();
-    setQuiz(prevState => {
-      const newState = {
-        ...prevState,
-        tags: event.target.value
-      }
-      return newState;
-    })
-    console.log('quiz after tag change', quiz);
-  }
-
-  const handleCreateQuiz = function () {
-    setQuiz({
-      name: "",
-      tags: "",
-      questions: []
-    });
-
-    // const currentQuiz = postQuiz(quiz);// create quiz - create new quiz ID
-    // quizId = currentQuiz._id;
+    updateQuiz(update);
   }
   
   return (
     <div className="create-quiz">
-      <div className="create-quiz__details">
-        <div className="create-quiz__details__container modal"></div>
-        <p>Quiz Name*</p>
-        <input type="text" value={quiz.name} onChange={handleQuizName} required></input>
-        <p>Quiz tags</p>
-        <input type="text" value={quiz.tags} onChange={handleQuizTags}></input>
-        <button onClick={handleCreateQuiz} className="modal-container">Create Quiz</button>
-      </div>
+      <CreateQuizForm quiz={quiz} setQuiz={setQuiz} quizId={quizId} setQuizId={setQuizId}/>
+      
       <div className="create-quiz__create-question-form">
         <CreateQuestionForm handleQuestionSubmit={handleQuestionSubmit} question={question} setQuestion={setQuestion} questionInitialState={questionInitialState}/>
         <button onClick={handleSaveQuiz}>Update quiz details</button>

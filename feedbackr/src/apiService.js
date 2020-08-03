@@ -15,11 +15,12 @@ export const getOneQuiz = async function (quizId, setQuiz) {
     },
     body: JSON.stringify(quizId)
   })
-  .then(res=>res.json())
+  .then(res => res.json())
+  .then(quiz => setQuiz(quiz))
   .catch(err => console.log(err));
 }
 
-export const postQuiz = async function (quiz) {
+export const postQuiz = async function (quiz, setQuizId) {
   fetch(`${BASE_URL}/quizzes`,{
     method: 'POST',
     headers: {
@@ -27,7 +28,8 @@ export const postQuiz = async function (quiz) {
     },
     body: JSON.stringify(quiz)
   })
-  .then(res=>res.json())
+  .then(res => res.json())
+  .then(quiz => setQuizId(quiz._id))
   .catch(err => console.log(err));
 }
 
