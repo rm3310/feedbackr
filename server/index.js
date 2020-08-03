@@ -2,11 +2,11 @@ express = require ('express');
 const app = express();
 
 const router = require('./router');
-// const cors = require('cors');
+const cors = require('cors');
 
 PORT = 3001;
 
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(router);
 

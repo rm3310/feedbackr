@@ -30,11 +30,27 @@ const postQuiz = async function (req, res) {
 }
 
 const postQuestion = async function (req, res) {
+  console.log('req',req.body);
   try {
     const quiz = await Quizzes.findById(req.body.quizId).exec();
-    await quiz.questions.push(req.body.question);
-    await quiz.save();
-    res.json(quiz);
+    const answerOptions = [];
+    req.body.question.answerOptions.forEach((el) => {
+      answerOptions.push(el);
+    })
+    console.log('answerOptions', answerOptions);
+    const question = {
+      questionType: req.body.question.questionType,
+      question: req.body.question.question,
+      points: req.body.question.points,
+      answerOptions: answerOptions,
+      correctAnswer: req.body.question.correctAnswer,
+      tags: req.body.question.tags,
+      time: req.body.question.time,
+    }
+    console.log('question',question)
+    await quiz.questions.push(question);
+    const updated = await quiz.save();
+    res.json(updated);
     res.status(204);
   } catch (error) {
     console.log(error); // eslint-disable-line no-console

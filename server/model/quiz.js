@@ -17,7 +17,7 @@ const QuestionSchema = new Schema({
 });
 
 const QuizSchema = new Schema({
-  name: {type: String, required: true},
+  name: {type: String, required: true, unique:true},
   tags: {type: String},
   questions: [QuestionSchema]
 });
