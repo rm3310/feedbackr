@@ -1,47 +1,11 @@
 .question-builder {
   background-color: $color-secondary;
 
-  &__input {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1rem;
-    align-items: center;
-    padding: .3rem;
-
-    label {
-      grid-column: 2 / 5;
-    }
-    
-    input {
-      grid-column: 5 / 12;
-    }
-        
-    .answers {
-      grid-column: 5 / 10;
-    }
-
-    .select {
-      grid-column: 5 / 12;
-      display: flex;
-      justify-content: space-evenly;
-
-      label input {
-        margin: 0 1rem 0 3rem;
-      }
-    }
-    
-    .add {
-      grid-column: 10 / 11;
-      align-self: stretch;
-    }
-    
-    .remove {
-      grid-column: 11 / 12;
-      align-self: stretch;
-    }
-
-    .dropdown {
-      grid-column: 5 / 12;
-    }
+  h3 {
+    color: $color-cool-dark;
+    font-family: $font-main;
+    font-weight: 100;
+    font-size: 2rem;
+    padding: 1rem 0 .4rem 3rem;
   }
 }

@@ -3,10 +3,7 @@ import React from 'react';
 import { handleSubmit, handleChange, renderAnswer } from './formFunctions'
 
 function CreateQuestionForm (props) {
-  const questionTypes = [
-    {value: 1, label: "Multiple Choice"},
-    {value: 2, label: "Written text"},
-  ]
+  
   const question = props.question;
   const setQuestion = props.setQuestion;
   const questionInitialState = props.questionInitialState;
@@ -26,12 +23,7 @@ function CreateQuestionForm (props) {
           onChange={(event, index)=>handleChange(event, index, setQuestion, question)}
         ></input>
       </div>
-      
-      <h3>Answer options</h3>
-      {renderAnswer(question.questionType, setQuestion, question)}
 
-      {/* Meta-data regarding question */}
-      <h3>Question Metadata</h3>
       <div className="question-builder__input">
         <label>Points</label>
         <input
@@ -41,7 +33,14 @@ function CreateQuestionForm (props) {
           onChange={(event, index)=>handleChange(event, index, setQuestion, question)}
         ></input>
       </div>
+      
+      <h3>Answer options</h3>
+      {renderAnswer(question.questionType, setQuestion, question)}
 
+      {/* Meta-data regarding question */}
+      {/* <h3>Question Metadata</h3> */}
+      
+{/* 
       <div className="question-builder__input">
         <label>Tags</label>
         <input
@@ -60,7 +59,7 @@ function CreateQuestionForm (props) {
           value={question.time}
           onChange={(event, index)=>handleChange(event, index, setQuestion, question)}
         ></input>
-      </div>
+      </div> */}
       
       <div className="question-builder__input">
         <input type="submit" value="Create new Question" className="submit"></input>

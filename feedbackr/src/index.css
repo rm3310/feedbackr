@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500&display=swap");
 *,
 *::after,
 *::before {
@@ -7,6 +8,9 @@
 
 html {
   font-size: 62.5%; }
+
+body {
+  margin: 3rem; }
 
 * {
   font-family: Arial, Helvetica, sans-serif; }
@@ -31,61 +35,120 @@ html {
   padding: 1rem 0;
   border: none;
   transition: all .2s;
-  background-color: #67a60f; }
+  background-color: #67a60f;
+  color: #ECECEC;
+  font-size: 1.5rem; }
   .add:hover {
     background-color: #5c940d;
     cursor: pointer; }
 
+.remove {
+  padding: 1rem 0;
+  border: none;
+  transition: all .2s;
+  background-color: #e67700;
+  color: #ECECEC;
+  font-size: 1.5rem; }
+  .remove:hover {
+    background-color: #c92a2a;
+    cursor: pointer; }
+
 .question-builder__input {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 1rem;
+  grid-template-columns: 1fr 4fr 1rem 8fr 1fr 1fr 1fr;
   align-items: center;
   padding: .3rem; }
   .question-builder__input label {
+    grid-column: 2 / 3;
     text-align: right; }
   .question-builder__input input {
+    grid-column: 4 / -2;
     border: none;
     border-bottom: solid #F3D250 0.2rem;
     padding: .7rem; }
+    .question-builder__input input:focus {
+      border: none;
+      border-bottom: solid #F78888 0.3rem;
+      outline: none;
+      transition: all .2s; }
+  .question-builder__input select {
+    grid-column: 4 / -2;
+    border: none;
+    border-bottom: solid #F3D250 0.2rem;
+    padding: .7rem; }
+    .question-builder__input select:focus {
+      border: none;
+      border-bottom: solid #F78888 0.3rem;
+      outline: none;
+      transition: all .2s; }
+
+.question-builder__select {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1rem 8fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: .3rem; }
+  .question-builder__select input {
+    grid-column: 4 / -4;
+    border: none;
+    border-bottom: solid #F3D250 0.2rem;
+    padding: .7rem; }
+    .question-builder__select input:focus {
+      border: none;
+      border-bottom: solid #F78888 0.3rem;
+      outline: none;
+      transition: all .2s; }
+  .question-builder__select label {
+    grid-column: 2 / 3;
+    text-align: right;
+    font-size: 1.5rem; }
+
+.modal {
+  display: block; }
 
 .navbar {
   background-color: #5DA2D2;
-  color: #333; }
+  text-decoration: none;
+  color: #ECECEC;
+  position: fixed;
+  transform: translateY(-3rem) translateX(-3rem);
+  width: 100%; }
   .navbar ul {
     display: flex; }
     .navbar ul li {
-      padding: 30px;
+      padding: 3rem;
       list-style: none; }
+      .navbar ul li a {
+        text-decoration: none;
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 1.5rem; }
+        .navbar ul li a:visited {
+          color: #ECECEC; }
+      .navbar ul li:hover {
+        background-color: #a61e4d;
+        color: #e67700;
+        transition: all .2s; }
 
-.create-quiz-main {
-  display: flex; }
+.create-quiz {
+  transform: translateY(5rem);
+  display: grid;
+  grid-template-columns: 3rem [full-start] 1fr [mid] 1fr [full-end] 3rem;
+  grid-template-rows: 6rem 1fr; }
+  .create-quiz__details {
+    grid-column: full-start / full-end;
+    grid-row: 1 / 2; }
+  .create-quiz__create-question-form {
+    grid-column: full-start / mid;
+    grid-row: 2; }
+  .create-quiz__quiz-preview {
+    grid-column: mid / full-end;
+    grid-row: 2; }
 
 .question-builder {
   background-color: #b1dbf7; }
-  .question-builder__input {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1rem;
-    align-items: center;
-    padding: .3rem; }
-    .question-builder__input label {
-      grid-column: 2 / 5; }
-    .question-builder__input input {
-      grid-column: 5 / 12; }
-    .question-builder__input .answers {
-      grid-column: 5 / 10; }
-    .question-builder__input .select {
-      grid-column: 5 / 12;
-      display: flex;
-      justify-content: space-evenly; }
-      .question-builder__input .select label input {
-        margin: 0 1rem 0 3rem; }
-    .question-builder__input .add {
-      grid-column: 10 / 11;
-      align-self: stretch; }
-    .question-builder__input .remove {
-      grid-column: 11 / 12;
-      align-self: stretch; }
-    .question-builder__input .dropdown {
-      grid-column: 5 / 12; }
+  .question-builder h3 {
+    color: #087f5b;
+    font-family: "Montserrat";
+    font-weight: 100;
+    font-size: 2rem;
+    padding: 1rem 0 .4rem 3rem; }

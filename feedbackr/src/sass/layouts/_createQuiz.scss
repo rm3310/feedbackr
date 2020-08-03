@@ -1,0 +1,21 @@
+.create-quiz {
+  transform: translateY(5rem);
+  display: grid;
+  grid-template-columns: 3rem [full-start] 1fr [mid] 1fr [full-end] 3rem;
+  grid-template-rows: 6rem 1fr;
+
+  &__details {
+    grid-column: full-start / full-end;
+    grid-row: 1 / 2;
+  }
+
+  &__create-question-form {
+    grid-column: full-start / mid;
+    grid-row: 2;
+  }
+
+  &__quiz-preview {
+    grid-column: mid / full-end;
+    grid-row: 2;
+  }
+}

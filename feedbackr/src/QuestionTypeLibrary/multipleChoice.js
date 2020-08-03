@@ -51,7 +51,7 @@ function MultipleChoice (props) {
   return (
     <div>
       {question.answerOptions.map((option, index) => (
-        <div key={index}> 
+        <div key={index} className="question-builder__select"> 
           <label>Answer option {String.fromCharCode(index+65)}</label>
           <input
             name="answerOptions"
@@ -59,11 +59,13 @@ function MultipleChoice (props) {
             onChange={(event) => handleChange(event, index)}
           ></input>
           <button
+            className="add"
             type="button"
             name="answerOptions"
             onClick={(event) => handleAdd(event, index)}
           >+</button>
           <button
+            className="remove"
             type="button"
             name="answerOptions"
             onClick={(event) => handleRemove(event, index)}>-</button>

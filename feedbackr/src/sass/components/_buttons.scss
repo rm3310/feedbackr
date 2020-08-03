@@ -13,9 +13,23 @@
 .add {
   @include button;
   background-color: $color-cool-light;
+  color: $color-text-light;
+  font-size: 1.5rem;
 
   &:hover {
     background-color: $color-cool-mid;
+    cursor: pointer;
+  }
+}
+
+.remove {
+  @include button;
+  background-color: $color-warm-light;
+  color: $color-text-light;
+  font-size: 1.5rem;
+
+  &:hover {
+    background-color: $color-warm-mid;
     cursor: pointer;
   }
 }
