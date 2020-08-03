@@ -1,15 +1,9 @@
-const Sequalize = require('sequalize');
+const mongoose = require('mongoose');
 
-const sequalize = new Sequalize ('feedbackr','admin','admin', {
-  host: 'localhost',
-  dialect: 'postgres'
-})
+mongoose.connect('mongodb://localhost:27017/quiz_db',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true 
+  });
 
-sequalize
- .authenticate()
- .then(()=>{
-   console.log('db connected')
- })
- .catch((error)=>{
-   console.log('unable to connect to db',error)
- })
+module.exports = mongoose;

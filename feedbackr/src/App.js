@@ -10,7 +10,7 @@ function App() {
 
   const quizQuestion1 = {
     questionType: 1,
-    question: "Question 1",
+    question: "Question 1 - correct answer 1 (Answer A1)",
     points: 2,
     answerOptions: [{value: 1, label: "Answer A1"}, {value: 2, label: "Answer B1"}, {value: 3, label: "Answer C1"}],
     correctAnswer: 1,
@@ -20,17 +20,21 @@ function App() {
 
   const quizQuestion2 = {
     questionType: 1,
-    question: "Question 2",
+    question: "Question 2 - correct answer 2 (Answer B2)",
     points: 2,
     answerOptions: [{value: 1, label: "Answer A2"}, {value: 2, label: "Answer B2"}, {value: 3, label: "Answer C2"}],
     correctAnswer: 2,
     tags: ["question 2", "3 options"],
     time: 0,
   }
-
-  const [quiz, setQuiz] = useState([quizQuestion1, quizQuestion2]);
-
-  const [db, setDb] = useState([quiz]);
+  // quizQuestion1, quizQuestion2
+  
+  const [quiz, setQuiz] = useState({
+    name: "",
+    tags: "",
+    questions: []
+  });
+  const [db, setDb] = useState([]);
 
   return (
     <Router>

@@ -9,12 +9,11 @@ function CreateQuestionForm (props) {
   ]
   const question = props.question;
   const setQuestion = props.setQuestion;
-  const handleQuestionSubmit = props.handleQuestionSubmit
-
-  console.log('question', question);
+  const questionInitialState = props.questionInitialState;
+  const handleQuestionSubmit = props.handleQuestionSubmit;
   
   return (
-    <form className="question-builder" onSubmit={(event)=>handleSubmit(event, handleQuestionSubmit, setQuestion, question)}>
+    <form className="question-builder" onSubmit={(event)=>handleSubmit(event, handleQuestionSubmit, setQuestion, question, questionInitialState)}>
       
       <h3>Question information</h3>
 

@@ -7,6 +7,12 @@ import ViewQuiz from '../ViewQuiz/viewQuiz';
 import CreateQuestionForm from '../CreateQuestionForm/createQuestionForm';
 import CreateQuestionPreview from '../CreateQuestionPreview/createQuestionPreview';
 
+// {
+//   name: "",
+//   tags: "",
+//   questions: []
+// }
+
 function CreateQuizMain (props) {
   
   const quiz = props.quiz;
@@ -29,24 +35,62 @@ function CreateQuizMain (props) {
 
   const [ question, setQuestion ] = useState(questionInitialState)
 
-  const handleQuestionSubmit = function (fullQuestion) {
-    setQuiz((question)=>[...question, fullQuestion])
-    // will use fetch to send to backend and save in database
+  const handleQuestionSubmit = function (newQuestion) {
+    setQuiz(prevState => {
+      const questions = [...prevState.questions, newQuestion]
+      const newState = {...prevState, questions: questions}
+      return newState
+    });
 
-    console.log(quiz);
+    console.log('quiz after question submit',quiz);
   }
 
-  const handleQuizSubmit = function () {
-    setDb((quizzes)=>[...quizzes, quiz]);
-    setQuiz([]);
-    console.log(db);
+  const handleSaveQuiz = function () {
+    console.log("THE CURRENT QUIZ", quiz)
+    setDb(prevState => ([...prevState, quiz]));
+    setQuiz({
+        name: "",
+        tags: "",
+        questions: []
+      });
+    console.log('THE FULL QUIZ DATABASE', db);
+  }
+
+  const handleQuizName = function (event) {
+    event.persist();
+    setQuiz(prevState => {
+      const newState = {
+        ...prevState,
+        name: event.target.value
+      }
+      return newState;
+    })
+    console.log('quiz after name change', quiz);
+  }
+
+  const handleQuizTags = function (event) {
+    event.persist();
+    setQuiz(prevState => {
+      const newState = {
+        ...prevState,
+        tags: event.target.value
+      }
+      return newState;
+    })
+    console.log('quiz after tag change', quiz);
   }
   
   return (
     <div className="create-quiz-main">
+      <div>
+        <p>Quiz Name</p>
+        <input type="text" value={quiz.name} onChange={handleQuizName}></input>
+        <p>Quiz tags</p>
+        <input type="text" value={quiz.tags} onChange={handleQuizTags}></input>
+      </div>
       <div className="create-quiz-main__create-question-form">
-        <CreateQuestionForm handleQuestionSubmit={handleQuestionSubmit} question={question} setQuestion={setQuestion}/>
-        <button onClick={handleQuizSubmit}>Save Quiz</button>
+        <CreateQuestionForm handleQuestionSubmit={handleQuestionSubmit} question={question} setQuestion={setQuestion} questionInitialState={questionInitialState}/>
+        <button onClick={handleSaveQuiz}>Add Quiz to Database</button>
       </div>
 
       <div className="create-quiz-main__quiz-preview">
@@ -58,4 +102,4 @@ function CreateQuizMain (props) {
   )
 }
 
-export default CreateQuizMain;
+export default CreateQuizMain

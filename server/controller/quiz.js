@@ -1,8 +1,10 @@
 // require model
+const 
 
 // add async
 const getQuizzes = function (req, res) {
   try {
+    const quizList = 
     console.log(req.body);
     res.send("getting quizzes");
   } catch (error) {
