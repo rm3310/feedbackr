@@ -1,16 +1,24 @@
 .navbar {
-  // background-image: linear-gradient(to right, #fff, $color-warm-mid);
-  background-color: $color-cool-light;
+  background-color: $color-cool-dark;
   text-decoration: none;
-  color: $color-text-dark;
   position: sticky;
   height: 6rem;;
   width: 100vw;
   display: flex;
 
   .logo {
+    margin-left: 50%;
     margin-right: auto;
-    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateX(-50%);
+    color: $color-text-light;
+    font-family: $font-logo;
+    font-size: 4rem;
+    
+    img {
+      height: 100%;
+    }
   }
 
   ul {
@@ -20,15 +28,18 @@
 
     li {
       list-style: none;
-      border: .2rem dashed blue;
+      display: flex;
+      align-items: stretch;
+      margin-right: 3rem;
 
       a {
-        padding: 3rem;
+        padding: 0 3rem;
         text-decoration: none;
         font-family: $font-main;
         font-weight: 400;
         font-size: 1.5rem;
-        border: .2rem dashed red;
+        display: flex;
+        align-items: center;
 
         &:visited {
           color: $color-text-light

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=B612&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
 *,
 *::after,
 *::before {
@@ -130,30 +131,40 @@ body {
       transition: all .2s; }
 
 .navbar {
-  background-color: #67a60f;
+  background-color: #087f5b;
   text-decoration: none;
-  color: #333;
   position: sticky;
   height: 6rem;
   width: 100vw;
   display: flex; }
   .navbar .logo {
+    margin-left: 50%;
     margin-right: auto;
-    height: fit-content; }
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateX(-50%);
+    color: #ECECEC;
+    font-family: "Patua One";
+    font-size: 4rem; }
+    .navbar .logo img {
+      height: 100%; }
   .navbar ul {
     display: flex;
     margin-left: auto;
     align-items: stretch; }
     .navbar ul li {
       list-style: none;
-      border: .2rem dashed blue; }
+      display: flex;
+      align-items: stretch;
+      margin-right: 3rem; }
       .navbar ul li a {
-        padding: 3rem;
+        padding: 0 3rem;
         text-decoration: none;
         font-family: "B612";
         font-weight: 400;
         font-size: 1.5rem;
-        border: .2rem dashed red; }
+        display: flex;
+        align-items: center; }
         .navbar ul li a:visited {
           color: #ECECEC; }
       .navbar ul li:hover {
@@ -249,3 +260,7 @@ body {
       border: 1rem solid red; }
   .multiple-choice-preview__options label {
     padding-left: 1rem; }
+
+.create-quiz__quiz-preview {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: .1rem solid black; }
