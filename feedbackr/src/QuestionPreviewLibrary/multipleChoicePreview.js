@@ -10,8 +10,11 @@ function MultipleChoicePreview (props) {
   const handleAnswerSelect = function (event) {
     event.persist();
     const isCorrectAnswer = question.correctAnswer == event.target.value ? true : false;
+    console.log("quizAnwers", quizAnswers);
     setQuizAnswers(prevState => {
+      console.log('prevState of quizAnswers', prevState);
       const newState = [...prevState];
+      console.log('newState of quizAnswers', newState);
       newState[questionIndex].selectedAnswer.value = event.target.value;
       newState[questionIndex].selectedAnswer.correct = isCorrectAnswer;
       return newState;
