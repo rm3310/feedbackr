@@ -1,0 +1,33 @@
+.score-report {
+  font-family: $font-handwritten;
+  background-color: #F5E5C9;
+  box-shadow: .5rem 1rem .5rem 0.3rem $color-text-light;
+  width: 50%;
+  padding: 0 3rem;
+  margin: 0 auto 3rem auto;
+
+  &__title {
+    font-size: 3rem;
+    padding-top: 2rem;
+  }
+
+  &__score {
+    font-family: $font-handwritten;
+  }
+
+  div {
+    padding: 2rem;
+  }
+
+  &__correct-report {
+    font-family: $font-handwritten;
+    color: $color-cool-mid;
+    padding: .5rem;
+  }
+
+  &__wrong-report {
+    font-family: $font-handwritten;
+    color: $color-warm-dark;
+    padding: .5rem;
+  }
+}

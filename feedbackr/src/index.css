@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=B612&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Kalam:wght@300&display=swap");
 *,
 *::after,
 *::before {
@@ -117,36 +117,6 @@ body {
   .question-builder__select button {
     align-self: stretch; }
 
-#create-quiz .modal-container {
-  display: none; }
-
-#details .modal {
-  background-color: rgba(51, 51, 51, 0.5);
-  height: 90vh;
-  width: 100vw; }
-
-.create-quiz__details {
-  background-color: #b1dbf7;
-  padding: 1rem 2.5rem 0; }
-  .create-quiz__details p {
-    display: inline-block;
-    padding-right: 1rem;
-    color: #333;
-    font-size: 2rem;
-    font-family: "B612"; }
-  .create-quiz__details input {
-    background-color: #b1dbf7;
-    border: none;
-    border-bottom: solid 0.2rem #5DA2D2;
-    width: 67%;
-    color: #2c6f9d;
-    font-size: 2rem; }
-    .create-quiz__details input:focus {
-      border: none;
-      border-bottom: solid #5c940d 0.3rem;
-      outline: none;
-      transition: all .2s; }
-
 .navbar {
   background-color: #087f5b;
   text-decoration: none;
@@ -244,7 +214,7 @@ body {
     padding: 1.5rem;
     font-size: 2rem;
     width: 60%;
-    margin: 0 auto 1rem;
+    margin: 0 auto 2rem;
     border: none;
     transition: all .2s;
     border-radius: 1rem;
@@ -339,3 +309,26 @@ body {
 .create-quiz__quiz-preview {
   background-color: rgba(255, 255, 255, 0.8);
   border: 0.1rem solid #c6c6c6; }
+
+.score-report {
+  font-family: "Kalam";
+  background-color: #F5E5C9;
+  box-shadow: 0.5rem 1rem 0.5rem 0.3rem #ECECEC;
+  width: 50%;
+  padding: 0 3rem;
+  margin: 0 auto 3rem auto; }
+  .score-report__title {
+    font-size: 3rem;
+    padding-top: 2rem; }
+  .score-report__score {
+    font-family: "Kalam"; }
+  .score-report div {
+    padding: 2rem; }
+  .score-report__correct-report {
+    font-family: "Kalam";
+    color: #5c940d;
+    padding: .5rem; }
+  .score-report__wrong-report {
+    font-family: "Kalam";
+    color: #a61e4d;
+    padding: .5rem; }

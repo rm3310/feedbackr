@@ -10,7 +10,6 @@
 // import components
 @import "components/buttons";
 @import "components/forminput";
-@import "components/modal";
 
 // import layouts
 @import "layouts/navbar";
@@ -21,6 +20,7 @@
 @import "layouts/viewQuiz";
 @import "layouts/multipleChoicePreview";
 @import "layouts/quizPrevew";
+@import "layouts/scoreReport";
 
 // import pages
 @import "pages/create_question";
