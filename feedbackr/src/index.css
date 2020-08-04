@@ -12,7 +12,7 @@ html {
   font-size: 80%; }
 
 body {
-  background: repeating-linear-gradient(45deg, #fdfefe, #fdfefe 10px, #e4f2fc 10px, #e4f2fc 20px); }
+  background: repeating-linear-gradient(45deg, #fdfefe, #fdfefe 10px, #edf7fd 10px, #edf7fd 20px); }
 
 * {
   font-family: "B612"; }
@@ -218,22 +218,24 @@ body {
   border: solid 1px #b1dbf7;
   border-radius: 5px;
   box-shadow: 0 0 5px 1px #ECECEC;
-  padding: 1.2rem;
-  margin: 1rem;
-  background-image: linear-gradient(to bottom, rgba(92, 148, 13, 0.5), rgba(103, 166, 15, 0.3)), url(https://st2.depositphotos.com/1785475/7603/v/950/depositphotos_76031891-stock-illustration-cube-light-pattern-background-vector.jpg);
-  background-size: 10%;
+  padding: 2rem;
+  width: 70%;
+  margin: 2rem auto;
+  background-color: rgba(255, 169, 77, 0.8);
   text-decoration: none; }
   .quiz-card h3 {
     font-family: "B612";
+    font-size: 2rem;
     padding-bottom: .9rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
-    color: #a61e4d; }
+    color: #087f5b; }
   .quiz-card p {
     font-family: "B612";
+    font-size: 1.5rem;
     padding-bottom: .3rem;
     letter-spacing: .1rem;
-    color: #4d4d4d; }
+    color: #333; }
 
 .quiz-list {
   margin: 8rem 0; }
