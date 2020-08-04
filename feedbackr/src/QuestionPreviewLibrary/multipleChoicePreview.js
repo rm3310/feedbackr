@@ -23,7 +23,7 @@ function MultipleChoicePreview (props) {
 
   return (
     <div className="multiple-choice-preview">
-      <p className="multiple-choice-preview__question">{question.question}</p>
+      <p className="multiple-choice-preview__question">{question.question} ({question.points} {question.points === 1 ? "point" : "points"})</p>
       {question.answerOptions.map((answerOption, index)=>
         <div key={`${index}${answerOption.label}`} className="multiple-choice-preview__options">
           <input

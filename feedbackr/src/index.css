@@ -310,7 +310,8 @@ body {
 .multiple-choice-preview {
   margin: 2rem 3rem; }
   .multiple-choice-preview__question {
-    padding-bottom: 1rem; }
+    padding-bottom: 1rem;
+    font-size: 1.5rem; }
   .multiple-choice-preview__options {
     padding-bottom: 1rem; }
     .multiple-choice-preview__options .radio-button {
