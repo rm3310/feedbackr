@@ -25,7 +25,6 @@ function CreateQuizForm (props) {
         quizId: props.quizId,
         ...quiz
       }
-      // updateQuiz(updatedQuiz);
     }
     console.log('quiz after name change', quiz);
   }

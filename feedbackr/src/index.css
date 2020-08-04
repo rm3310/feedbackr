@@ -190,7 +190,8 @@ body {
     align-self: stretch;
     display: flex; }
     .create-quiz__details p, .create-quiz__details input, .create-quiz__details button {
-      align-self: center; }
+      align-self: center;
+      font-size: 1.4rem; }
   .create-quiz__create-question-form {
     grid-column: full-start / mid;
     grid-row: 2;
@@ -320,10 +321,9 @@ body {
       border-radius: 50%; }
     .multiple-choice-preview__options input[type="radio"] {
       padding-right: 1rem; }
-      .multiple-choice-preview__options input[type="radio"]:checked + .radio-button {
-        border: 1rem solid red; }
     .multiple-choice-preview__options label {
-      padding-left: 1rem; }
+      padding-left: 1rem;
+      font-size: 1.5rem; }
 
 .create-quiz__quiz-preview {
   background-color: rgba(255, 255, 255, 0.8);
