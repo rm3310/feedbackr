@@ -1,18 +1,33 @@
-.do-quiz {
+.view-quiz {
   margin: 3rem;
-  border: .1rem solid black;
+  border: .1rem solid $color-text-light;
   font-size: 1.8rem;
+  background-color: rgba(#fff, 0.8);
+  border-radius: 1rem;
 
   .quiz-question {
-    border: .1rem solid black;
+    border: .1rem solid $color-text-light;
     padding: 2rem;
     margin: 2rem;
     display: flex;
+    background-color: lighten($color-text-light, 5%);
+    border-radius: 0.5rem;
 
     .question-number {
       padding-right: 1rem;
       font-size: 6rem;
       color: darken($color-text-light, 20%);
     }
+  }
+
+  button {
+    @include button;
+    padding: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-bottom: 2rem;
   }
 }

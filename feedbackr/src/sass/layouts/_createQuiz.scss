@@ -12,12 +12,22 @@
   &__create-question-form {
     grid-column: full-start / mid;
     grid-row: 2;
-    margin: 2.5rem 1rem 0 0;
+    margin: 2.5rem 1rem 2.5rem 0;
   }
 
   &__quiz-preview {
     grid-column: mid / full-end;
     grid-row: 2;
-    margin: 2.5rem 0 0 1rem;
+    margin: 2.5rem 0 2.5rem 1rem;
+    border-radius: 2rem;
+
+    h3 {
+      color: $color-cool-dark;
+      font-family: $font-main;
+      font-weight: 100;
+      font-size: 2rem;
+      padding: 3rem 0 .4rem 3rem;
+      
+    }
   }
 }

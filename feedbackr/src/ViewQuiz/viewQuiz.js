@@ -32,7 +32,7 @@ function ViewQuiz (props) {
   };
 
   return (
-    <form onSubmit={handleQuizSubmit} className="do-quiz">
+    <form onSubmit={handleQuizSubmit} className="view-quiz">
     {console.log('quizAnswers', quizAnswers)}
       {quiz.questions.map((question, index)=>(
       <div key={index} className="quiz-question">
@@ -40,7 +40,7 @@ function ViewQuiz (props) {
         <MultipleChoicePreview question={question} questionIndex={index} quizAnswers={quizAnswers} setQuizAnswers={setQuizAnswers} />
       </div>
       ))}
-      <button type="submit">How did I do?</button>
+      <button className="submit" type="submit">How did I do?</button>
     </form>
   )
 }
