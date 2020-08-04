@@ -33,7 +33,7 @@
     border-radius: 1rem;
     text-align: center;
 
-    &:visited {
+    &:visited, &:active, &:link {
       color: $color-text-light;
       text-decoration: none;
     }

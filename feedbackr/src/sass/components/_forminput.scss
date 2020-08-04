@@ -7,6 +7,7 @@
   label {
     grid-column: 2 / 3;
     text-align: right;
+    font-size: 1.5rem;
   }
   
   input {
@@ -51,6 +52,7 @@
     border: none;
     border-bottom: solid $color-primary .2rem;
     padding: .7rem;
+    font-size: 1.4rem;
 
     &:focus {
       border: none;

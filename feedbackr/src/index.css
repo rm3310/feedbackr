@@ -54,7 +54,7 @@ body {
 .create-quiz-submit {
   border: none;
   transition: all .2s;
-  font-size: 2rem;
+  font-size: 1.6rem;
   background-color: #087f5b;
   padding: 1rem;
   color: #ECECEC;
@@ -71,7 +71,8 @@ body {
   padding: .3rem; }
   .question-builder__input label {
     grid-column: 2 / 3;
-    text-align: right; }
+    text-align: right;
+    font-size: 1.5rem; }
   .question-builder__input input {
     grid-column: 4 / -2;
     border: none;
@@ -104,7 +105,8 @@ body {
     grid-column: 4 / -4;
     border: none;
     border-bottom: solid #5DA2D2 0.2rem;
-    padding: .7rem; }
+    padding: .7rem;
+    font-size: 1.4rem; }
     .question-builder__select input:focus {
       border: none;
       border-bottom: solid #5c940d 0.3rem;
@@ -116,6 +118,24 @@ body {
     font-size: 1.5rem; }
   .question-builder__select button {
     align-self: stretch; }
+
+.create-quiz__details {
+  background-color: #b1dbf7; }
+  .create-quiz__details p {
+    font-size: 2rem;
+    padding: 0 1rem 0 2rem; }
+  .create-quiz__details input {
+    width: 61%;
+    border: none;
+    border-bottom: solid #5DA2D2 0.2rem;
+    padding: .8rem 0.5rem;
+    font-size: 1.4rem;
+    background-color: #b1dbf7; }
+    .create-quiz__details input:focus {
+      border: none;
+      border-bottom: solid #5c940d 0.3rem;
+      outline: none;
+      transition: all .2s; }
 
 .navbar {
   background-color: #087f5b;
@@ -170,8 +190,7 @@ body {
     align-self: stretch;
     display: flex; }
     .create-quiz__details p, .create-quiz__details input, .create-quiz__details button {
-      align-self: center;
-      margin-bottom: 1.4rem; }
+      align-self: center; }
   .create-quiz__create-question-form {
     grid-column: full-start / mid;
     grid-row: 2;
@@ -219,7 +238,7 @@ body {
     transition: all .2s;
     border-radius: 1rem;
     text-align: center; }
-    .question-builder a:visited {
+    .question-builder a:visited, .question-builder a:active, .question-builder a:link {
       color: #ECECEC;
       text-decoration: none; }
     .question-builder a:hover {

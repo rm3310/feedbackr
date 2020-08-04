@@ -1,0 +1,24 @@
+.create-quiz__details {
+  background-color: $color-secondary;
+
+  p {
+    font-size: 2rem;
+    padding: 0 1rem 0 2rem;
+  }
+
+  input {
+    width: 61%;
+    border: none;
+    border-bottom: solid $color-primary .2rem;
+    padding: .8rem 0.5rem;
+    font-size: 1.4rem;
+    background-color: $color-secondary;
+
+    &:focus {
+      border: none;
+      border-bottom: solid $color-cool-mid .3rem;
+      outline: none;
+      transition: all .2s;
+    }
+  }
+}
