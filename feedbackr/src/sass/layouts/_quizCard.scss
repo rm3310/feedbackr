@@ -8,6 +8,11 @@
   margin: 2rem auto;
   background-color: rgba(lighten($color-warm-light, 20%),0.8); 
   text-decoration: none;
+  transition: all 0.2s;
+
+  &:hover{
+    transform: scale(1.03);
+  }
 
   h3 {
     font-family: $font-main;
