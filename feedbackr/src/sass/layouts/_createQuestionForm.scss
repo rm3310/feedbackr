@@ -13,9 +13,11 @@
   }
 
   .submit {
+    @include button;
+    padding: 1.5rem;
+    font-size: 2rem;
     margin: 2rem auto;
     grid-column: 2 / -2;
-    height: 3rem;
-    width: 40rem;
+    width: 60%;
   }
 }

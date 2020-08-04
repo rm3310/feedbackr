@@ -12,7 +12,7 @@ function CreateQuestionForm (props) {
   return (
     <form className="question-builder" onSubmit={(event)=>handleSubmit(event, handleQuestionSubmit, setQuestion, question, questionInitialState)}>
       
-      <h3>Question information</h3>
+      <h3>Question Information</h3>
 
       <div className="question-builder__input">
         <label>Question</label>
@@ -34,7 +34,7 @@ function CreateQuestionForm (props) {
         ></input>
       </div>
       
-      <h3>Answer options</h3>
+      <h3>Answer Options</h3>
       {renderAnswer(question.questionType, setQuestion, question)}
       
       <div className="question-builder__input">

@@ -7,27 +7,29 @@
 
   .quiz-question {
     border: .1rem solid $color-text-light;
-    padding: 2rem;
+    // padding: 2rem;
     margin: 2rem;
     display: flex;
     background-color: lighten($color-text-light, 5%);
     border-radius: 0.5rem;
 
     .question-number {
-      padding-right: 1rem;
+      padding-top: 1.4rem;
+      padding-left: 2rem;
       font-size: 6rem;
       color: darken($color-text-light, 20%);
     }
   }
 
-  button {
+  .submit {
     @include button;
     padding: 1.5rem;
     font-size: 2rem;
     cursor: pointer;
-    width: 50%;
-    margin-right: 25%;
-    margin-left: 25%;
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
     margin-bottom: 2rem;
+    height: 2rem;
   }
 }
