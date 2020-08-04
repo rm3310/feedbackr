@@ -237,8 +237,11 @@ body {
     letter-spacing: .1rem;
     color: #333; }
 
-.quiz-list {
-  margin: 8rem 0; }
+.quiz-list .choose-quiz-text {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+  color: #087f5b; }
 
 .view-quiz {
   margin: 3rem;

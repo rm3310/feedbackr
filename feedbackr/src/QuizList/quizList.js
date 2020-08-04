@@ -7,7 +7,7 @@ function QuizList (props) {
 
   return (
     <div className="quiz-list">
-      <p>Choose a quiz to start</p>
+      <p className="choose-quiz-text">Click on a quiz and test yourself</p>
       {quizList.map((quiz) => (
         <QuizCard key={quiz._id} quiz={quiz}/>
       ))}
