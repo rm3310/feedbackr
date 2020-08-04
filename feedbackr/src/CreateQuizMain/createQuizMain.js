@@ -51,12 +51,14 @@ function CreateQuizMain (props) {
       </div>
 
       <div className="create-quiz__quiz-preview">
-        <h3>Quiz Preview</h3>
-        <ViewQuiz quiz={quiz} />
         <h3>Next question Preview</h3>
         <CreateQuestionPreview question={question} />
+        <h3>Quiz Preview</h3>
+        <ViewQuiz quiz={quiz} />
       </div>
+      <div className="create-quiz__quiz-preview stack-top"></div>
     </div>
+
   )
 }
 

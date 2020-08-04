@@ -4,3 +4,8 @@
     border: .1rem solid darken($color-text-light, 15%);
   }
 }
+
+.stack-top {
+  background-color: rgba(#fff, 0);
+  z-index: 9;
+}

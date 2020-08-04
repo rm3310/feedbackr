@@ -329,6 +329,10 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
   border: 0.1rem solid #c6c6c6; }
 
+.stack-top {
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 9; }
+
 .score-report {
   font-family: "Kalam";
   background-color: #F5E5C9;
