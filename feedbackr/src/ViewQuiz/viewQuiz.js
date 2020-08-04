@@ -15,17 +15,25 @@ function ViewQuiz (props) {
   const handleQuizSubmit = function (event) {
     event.preventDefault();
     console.log("quiz answers on quiz submit", quizAnswers);
+    let totalScore = 0;
+    let userScore = 0;
+    quizAnswers.forEach((question)=>{
+      console.log(quizAnswers)
+      totalScore += question.points;
+      userScore += question.selectedAnswer.correct === true ? question.points : 0;
+    })
+    console.log(userScore, '/', totalScore)
   };
 
   return (
-    <form onSubmit={handleQuizSubmit}>
+    <form onSubmit={handleQuizSubmit} className="do-quiz">
       {quiz.questions.map((question, index)=>(
-      <div key={index}>
-        <span>{index+1}:</span>
+      <div key={index} className="quiz-question">
+        <span className="question-number">{index+1}</span>
         <MultipleChoicePreview question={question} questionIndex={index} quizAnswers={quizAnswers} setQuizAnswers={setQuizAnswers} />
       </div>
       ))}
-      <button type="submit">submit</button>
+      <button type="submit">How did I do?</button>
     </form>
   )
 }

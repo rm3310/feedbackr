@@ -19,17 +19,17 @@ function MultipleChoicePreview (props) {
   }
 
   return (
-    <div>
-      <p>{question.question}</p>
+    <div className="multiple-choice-preview">
+      <p className="multiple-choice-preview__question">{question.question}</p>
       {question.answerOptions.map((answerOption, index)=>
-        <div key={`${index}${answerOption.label}`}>
+        <div key={`${index}${answerOption.label}`} className="multiple-choice-preview__options">
+          <span className="radio-button"></span>
           <input
             type="radio"
             id={index}
             value={answerOption.value}
             onChange={handleAnswerSelect}
             name={question.question}
-            // checked={ === answerOption.value}
             />
           <label htmlFor={index}>{String.fromCharCode(index+65)}: {answerOption.label}</label>
         </div>

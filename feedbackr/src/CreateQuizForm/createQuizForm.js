@@ -23,7 +23,7 @@ function CreateQuizForm (props) {
         quizId: props.quizId,
         ...quiz
       }
-      updateQuiz(updatedQuiz);
+      // updateQuiz(updatedQuiz);
     }
     console.log('quiz after name change', quiz);
   }
@@ -31,7 +31,7 @@ function CreateQuizForm (props) {
   const handleCreateQuiz = function () {
     postQuiz(quiz, setQuizId);
     const element = document.getElementById('details');
-
+    console.log('quiz after quiz create', quiz);
   }
 
   return (

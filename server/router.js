@@ -8,7 +8,7 @@ router.post('/questions', quizController.postQuestion);
 router.get('/quizzes', quizController.getQuizzes);
 router.post('/quizzes', quizController.postQuiz);
 
-router.get('/quiz', quizController.getOneQuiz);
+router.get('/quiz/:id', quizController.getOneQuiz);
 
 // quiz updates
 router.post('/quiz-update', quizController.updateQuiz);

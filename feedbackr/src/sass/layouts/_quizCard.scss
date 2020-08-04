@@ -1,0 +1,29 @@
+.quiz-card {
+  display: block;
+  border: solid 1px $color-secondary;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px $color-text-light;
+  padding: 1.2rem;
+  margin: 1rem;
+  background-image: linear-gradient(to bottom,
+  rgba($color-cool-mid, 0.5),
+  rgba($color-cool-light, 0.3)),
+  url(https://st2.depositphotos.com/1785475/7603/v/950/depositphotos_76031891-stock-illustration-cube-light-pattern-background-vector.jpg);
+  background-size: 10%;
+  text-decoration: none;
+
+  h3 {
+    font-family: $font-main;
+    padding-bottom: .9rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: $color-warm-dark
+  }
+
+  p {
+    font-family: $font-main;
+    padding-bottom: .3rem;
+    letter-spacing: .1rem;
+    color: lighten($color-text-dark, 10%)
+  }
+}

@@ -1,9 +1,10 @@
 .navbar {
-  background-image: linear-gradient(to right, #fff, $color-warm-mid);
+  // background-image: linear-gradient(to right, #fff, $color-warm-mid);
+  background-color: $color-cool-light;
   text-decoration: none;
-  color: $color-text-light;
+  color: $color-text-dark;
   position: sticky;
-  // transform: translateY(-3rem) translateX(-3rem);
+  height: 6rem;;
   width: 100vw;
   display: flex;
 
@@ -15,16 +16,19 @@
   ul {
     display: flex;
     margin-left: auto;
+    align-items: stretch;
 
     li {
-      padding: 3rem;
       list-style: none;
+      border: .2rem dashed blue;
 
       a {
+        padding: 3rem;
         text-decoration: none;
         font-family: $font-main;
         font-weight: 400;
         font-size: 1.5rem;
+        border: .2rem dashed red;
 
         &:visited {
           color: $color-text-light

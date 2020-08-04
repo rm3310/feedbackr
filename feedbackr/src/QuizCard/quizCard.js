@@ -8,7 +8,7 @@ function QuizCard (props) {
   quiz.questions.forEach(question => pointTotal+=question.points);
 
   return (
-    <a href={`/do-quiz?id=${quiz._id}`}>
+    <a className="quiz-card" href={`/do-quiz?id=${quiz._id}`}>
       <h3>{quiz.name}</h3>
       <p>Total points: {pointTotal}</p>
       <p>Number of questions: {quiz.questions.length}</p>

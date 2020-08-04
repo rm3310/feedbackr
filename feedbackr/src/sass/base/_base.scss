@@ -8,5 +8,15 @@
 
 html {
     // This defines what 1rem is
-    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+    font-size: 80%; //1 rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+    background: repeating-linear-gradient(
+        45deg,
+        lighten($color-primary, 40%),
+        lighten($color-primary, 40%) 10px,
+        lighten($color-secondary, 11%) 10px,
+        lighten($color-secondary, 11%) 20px,
+    )
 }

@@ -8,15 +8,13 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 80%; }
+
+body {
+  background: repeating-linear-gradient(45deg, #fdfefe, #fdfefe 10px, #e4f2fc 10px, #e4f2fc 20px); }
 
 * {
-  font-family: Arial, Helvetica, sans-serif; }
-
-.question-builder__input {
-  font-size: 1.6rem; }
-  .question-builder__input label {
-    color: #333; }
+  font-family: "B612"; }
 
 .submit {
   border: none;
@@ -132,10 +130,11 @@ html {
       transition: all .2s; }
 
 .navbar {
-  background-image: linear-gradient(to right, #fff, #c92a2a);
+  background-color: #67a60f;
   text-decoration: none;
-  color: #ECECEC;
+  color: #333;
   position: sticky;
+  height: 6rem;
   width: 100vw;
   display: flex; }
   .navbar .logo {
@@ -143,15 +142,18 @@ html {
     height: fit-content; }
   .navbar ul {
     display: flex;
-    margin-left: auto; }
+    margin-left: auto;
+    align-items: stretch; }
     .navbar ul li {
-      padding: 3rem;
-      list-style: none; }
+      list-style: none;
+      border: .2rem dashed blue; }
       .navbar ul li a {
+        padding: 3rem;
         text-decoration: none;
         font-family: "B612";
         font-weight: 400;
-        font-size: 1.5rem; }
+        font-size: 1.5rem;
+        border: .2rem dashed red; }
         .navbar ul li a:visited {
           color: #ECECEC; }
       .navbar ul li:hover {
@@ -162,27 +164,88 @@ html {
 .create-quiz {
   display: grid;
   grid-template-columns: 3rem [full-start] 1fr [mid] 1fr [full-end] 3rem;
-  grid-template-rows: 4.3rem 1fr; }
+  grid-template-rows: 4.8rem 1fr; }
   .create-quiz__details {
-    grid-column: full-start / mid;
-    grid-row: 1 / 2; }
+    grid-column: full-start / full-end;
+    grid-row: 1 / 2;
+    border-radius: 0 0 2rem 2rem; }
   .create-quiz__create-question-form {
     grid-column: full-start / mid;
-    grid-row: 2; }
+    grid-row: 2;
+    margin: 2.5rem 1rem 0 0; }
   .create-quiz__quiz-preview {
     grid-column: mid / full-end;
-    grid-row: 1; }
+    grid-row: 2;
+    margin: 2.5rem 0 0 1rem; }
 
 .question-builder {
-  background-color: #b1dbf7; }
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 100vh;
+  border: #ECECEC 0.1rem solid; }
   .question-builder h3 {
     color: #087f5b;
     font-family: "B612";
     font-weight: 100;
     font-size: 2rem;
-    padding: 1rem 0 .4rem 3rem; }
+    padding: 3rem 0 .4rem 3rem; }
   .question-builder .submit {
-    grid-column: 2 / -2; }
+    margin: 2rem auto;
+    grid-column: 2 / -2;
+    height: 3rem;
+    width: 40rem; }
 
-@im // import pages
-@import "pages/create_question";
+.quiz-card {
+  display: block;
+  border: solid 1px #b1dbf7;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px #ECECEC;
+  padding: 1.2rem;
+  margin: 1rem;
+  background-image: linear-gradient(to bottom, rgba(92, 148, 13, 0.5), rgba(103, 166, 15, 0.3)), url(https://st2.depositphotos.com/1785475/7603/v/950/depositphotos_76031891-stock-illustration-cube-light-pattern-background-vector.jpg);
+  background-size: 10%;
+  text-decoration: none; }
+  .quiz-card h3 {
+    font-family: "B612";
+    padding-bottom: .9rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #a61e4d; }
+  .quiz-card p {
+    font-family: "B612";
+    padding-bottom: .3rem;
+    letter-spacing: .1rem;
+    color: #4d4d4d; }
+
+.quiz-list {
+  margin: 8rem 0; }
+
+.do-quiz {
+  margin: 3rem;
+  border: .1rem solid black;
+  font-size: 1.8rem; }
+  .do-quiz .quiz-question {
+    border: .1rem solid black;
+    padding: 2rem;
+    margin: 2rem;
+    display: flex; }
+    .do-quiz .quiz-question .question-number {
+      padding-right: 1rem;
+      font-size: 6rem;
+      color: #b9b9b9; }
+
+.multiple-choice-preview__question {
+  padding-bottom: 1rem; }
+
+.multiple-choice-preview__options {
+  padding-bottom: 1rem; }
+  .multiple-choice-preview__options .radio-button {
+    border: .1rem solid black;
+    padding: 0 1.1rem;
+    border-radius: 50%; }
+  .multiple-choice-preview__options input[type="radio"] {
+    padding-right: 1rem; }
+    .multiple-choice-preview__options input[type="radio"]:checked + .radio-button {
+      border: 1rem solid red; }
+  .multiple-choice-preview__options label {
+    padding-left: 1rem; }

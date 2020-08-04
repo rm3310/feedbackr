@@ -18,6 +18,8 @@ function App() {
 
   const [db, setDb] = useState([]);
 
+  console.log('DATABASE', db);
+
   useEffect(()=>{
     getAllQuizzes(setDb);
   },[]);

@@ -8,15 +8,12 @@ export const getAllQuizzes = async function (setDb) {
 }
 
 export const getOneQuiz = async function (quizId, setQuiz) {
-  fetch(`${BASE_URL}/quizzes`,{
-    method: 'POST',
-    headers: {
-      'Content-Type':'application/json'
-    },
-    body: JSON.stringify(quizId)
-  })
+  fetch(`${BASE_URL}/quiz/${quizId}`)
   .then(res => res.json())
-  .then(quiz => setQuiz(quiz))
+  .then(data => {
+    console.log('getOnequiz body in component',data);
+    setQuiz(data)
+  })
   .catch(err => console.log(err));
 }
 

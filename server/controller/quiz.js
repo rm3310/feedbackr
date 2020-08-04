@@ -14,7 +14,8 @@ const getQuizzes = async function (req, res) {
 
 const getOneQuiz = async function (req, res) {
   try {
-    const quiz = await Quizzes.findById(req.body.quizId);
+    console.log('req params', req.params)
+    const quiz = await Quizzes.findById(req.params.id);
     res.json(quiz);
     res.status(200);
   } catch (error) {

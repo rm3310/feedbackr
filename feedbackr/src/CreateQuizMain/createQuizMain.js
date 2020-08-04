@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 
 // Functions
 import { updateQuiz, postQuestion, getOneQuiz } from '../apiService'
@@ -30,27 +30,16 @@ function CreateQuizMain (props) {
   const db = props.db;
   const setDb = props.setDb;
 
-
-  const handleQuestionSubmit = function (newQuestion) {
+  const handleQuestionSubmit = async function (newQuestion) {
     const newQuestionToDb = {
       quizId: quizId,
       question: newQuestion
     }
-    postQuestion(newQuestionToDb);
+    await postQuestion(newQuestionToDb);
     getOneQuiz(quizId, setQuiz);
+    
+    console.log('db after question added', db);
     console.log('quiz after question added', quiz);
-  }
-
-  const handleSaveQuiz = function () {
-    console.log("THE CURRENT QUIZ", quiz)
-    setDb(prevState => ([...prevState, quiz]));
-    console.log('THE FULL QUIZ DATABASE', db);
-    const update = {
-      quizId: quizId,
-      name: quiz.name,
-      tags: quiz.tags
-    }
-    updateQuiz(update);
   }
   
   return (
