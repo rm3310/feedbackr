@@ -20,4 +20,26 @@
     grid-column: 2 / -2;
     width: 60%;
   }
+
+  a {
+    display: block;
+    background-color: $color-cool-dark;
+    text-decoration: none;
+    padding: 1.5rem;
+    font-size: 2rem;
+    width: 60%;
+    margin: 0 auto 1rem;;
+    @include button;
+    border-radius: 1rem;
+    text-align: center;
+
+    &:visited {
+      color: $color-text-light;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: $color-cool-mid;
+    }
+  }
 }

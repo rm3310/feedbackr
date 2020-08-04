@@ -26,7 +26,6 @@ function MultipleChoicePreview (props) {
       <p className="multiple-choice-preview__question">{question.question}</p>
       {question.answerOptions.map((answerOption, index)=>
         <div key={`${index}${answerOption.label}`} className="multiple-choice-preview__options">
-          <span className="radio-button"></span>
           <input
             type="radio"
             id={index}

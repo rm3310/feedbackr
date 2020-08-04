@@ -30,22 +30,39 @@ body {
 .add {
   border: none;
   transition: all .2s;
-  background-color: #67a60f;
+  background-color: #5c940d;
   color: #ECECEC;
-  font-size: 1.5rem; }
+  font-size: 2rem;
+  margin: 0 0.15rem 0 0.3rem;
+  border-radius: 0.5rem; }
   .add:hover {
-    background-color: #5c940d;
+    background-color: #67a60f;
     cursor: pointer; }
 
 .remove {
   border: none;
   transition: all .2s;
-  background-color: #e67700;
+  background-color: #c92a2a;
   color: #ECECEC;
-  font-size: 1.5rem; }
+  font-size: 2rem;
+  margin: 0 0.3rem 0 0.15rem;
+  border-radius: 0.5rem; }
   .remove:hover {
-    background-color: #c92a2a;
+    background-color: #e67700;
     cursor: pointer; }
+
+.create-quiz-submit {
+  border: none;
+  transition: all .2s;
+  font-size: 2rem;
+  background-color: #087f5b;
+  padding: 1rem;
+  color: #ECECEC;
+  margin-left: 1rem;
+  width: 24%;
+  border-radius: 1rem; }
+  .create-quiz-submit:hover {
+    background-color: #5c940d; }
 
 .question-builder__input {
   display: grid;
@@ -175,11 +192,16 @@ body {
 .create-quiz {
   display: grid;
   grid-template-columns: 3rem [full-start] 1fr [mid] 1fr [full-end] 3rem;
-  grid-template-rows: 4.8rem 1fr; }
+  grid-template-rows: 7rem 1fr; }
   .create-quiz__details {
     grid-column: full-start / full-end;
     grid-row: 1 / 2;
-    border-radius: 0 0 2rem 2rem; }
+    border-radius: 0 0 2rem 2rem;
+    align-self: stretch;
+    display: flex; }
+    .create-quiz__details p, .create-quiz__details input, .create-quiz__details button {
+      align-self: center;
+      margin-bottom: 1.4rem; }
   .create-quiz__create-question-form {
     grid-column: full-start / mid;
     grid-row: 2;
@@ -215,6 +237,23 @@ body {
     margin: 2rem auto;
     grid-column: 2 / -2;
     width: 60%; }
+  .question-builder a {
+    display: block;
+    background-color: #087f5b;
+    text-decoration: none;
+    padding: 1.5rem;
+    font-size: 2rem;
+    width: 60%;
+    margin: 0 auto 1rem;
+    border: none;
+    transition: all .2s;
+    border-radius: 1rem;
+    text-align: center; }
+    .question-builder a:visited {
+      color: #ECECEC;
+      text-decoration: none; }
+    .question-builder a:hover {
+      background-color: #5c940d; }
 
 .quiz-card {
   display: block;

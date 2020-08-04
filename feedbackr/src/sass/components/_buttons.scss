@@ -12,24 +12,43 @@
 
 .add {
   @include button;
-  background-color: $color-cool-light;
+  background-color: $color-cool-mid;
   color: $color-text-light;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin: 0 0.15rem 0 0.3rem;
+  border-radius: 0.5rem;
 
   &:hover {
-    background-color: $color-cool-mid;
+    background-color: $color-cool-light;
     cursor: pointer;
   }
 }
 
 .remove {
   @include button;
-  background-color: $color-warm-light;
+  background-color: $color-warm-mid;
   color: $color-text-light;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin: 0 0.3rem 0 0.15rem;
+  border-radius: 0.5rem;
 
   &:hover {
-    background-color: $color-warm-mid;
+    background-color: $color-warm-light;
     cursor: pointer;
+  }
+}
+
+.create-quiz-submit {
+  @include button;
+  font-size: 2rem;
+  background-color: $color-cool-dark;
+  padding: 1rem;
+  color: $color-text-light;
+  margin-left: 1rem;
+  width: 24%;
+  border-radius: 1rem;
+
+  &:hover{
+    background-color: $color-cool-mid;
   }
 }
