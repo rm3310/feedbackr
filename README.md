@@ -29,7 +29,8 @@ And that's it!! Happy coding
 * Use Redux for better state management
 * Allow for the name of quiz to be saved before questions start being made
 * Unit testing could have made development smoother
-* Move to a relational database because the data is more... well relational
+* Move to a relational database because the data is... well... relational
+* Use more functional programming fundamentals to make the app more testable and predictable
 
 ## The Future
 * Add a page where teacher's can request for extra features to be added
@@ -42,4 +43,4 @@ Checkout [https://github.com/rikiDalvarez/feedbackr](https://github.com/rikiDalv
 1. [Ricardo D Alvarez](https://github.com/rikiDalvarez)
 2. [Marijana Del Bianco](https://github.com/mjdelbianco)
 3. [Mohammed Abdul Khader](https://github.com/MohammedAK1991)
-4. Martin Rodl
+4. [Martin Rodl](https://github.com/martinrodl)
