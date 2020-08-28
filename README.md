@@ -12,4 +12,4 @@ And that's it!! Happy coding
 
 # The App itself
 ## The create a quiz page
-![Create Quiz](https://drive.google.com/file/d/1xpDRe9PW1J7cqxDNbx1ZHLPfXuHfQblf/view?usp=sharing)
+![Create Quiz]('/screenshots/Create a Quiz.png')
