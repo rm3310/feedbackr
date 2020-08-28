@@ -34,15 +34,11 @@ And that's it!! Happy coding
 ## The Future
 * Add a page where teacher's can request for extra features to be added
 * Add authentication to allow teachers and students to have their own profiles and have a record of the quizzes they've made, saved and completed, along with a historical score report
-* Create a question type library - so that quizzes can be more dynamic. Examples of question types include
- 1. Matching questions to answers
- 2. Drawing out chemical formulas
- 3. Diagram annotation
- 4. Graph creation
+* Create a question type library - so that quizzes can be more dynamic. Examples of question types including: Matching questions to answers, Drawing out chemical formulas, Diagram annotation, Graph creation
 * Allow for PDF to quiz converters so that teachers can turn past papers (that are publicly and freely available) into online quizzes
 
 # Collaborators
-Checkout [https://github.com/rikiDalvarez/feedbackr](https://github.com/rikiDalvarez/feedbackr) who worked on testing for the project. Contributors included:
+Checkout [https://github.com/rikiDalvarez/feedbackr](https://github.com/rikiDalvarez/feedbackr) where testing scripts were added. Contributors include:
 1. [Ricardo D Alvarez](https://github.com/rikiDalvarez)
 2. [Marijana Del Bianco](https://github.com/mjdelbianco)
 3. [Mohammed Abdul Khader](https://github.com/MohammedAK1991)
