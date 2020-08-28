@@ -12,4 +12,11 @@ And that's it!! Happy coding
 
 # The App itself
 ## The create a quiz page
-![Create Quiz]('/screenshots/Create a Quiz.png')
+![Create Quiz](https://drive.google.com/file/d/1xpDRe9PW1J7cqxDNbx1ZHLPfXuHfQblf/view?usp=sharing)
+
+# Collaborators
+Checkout [https://github.com/rikiDalvarez/feedbackr](https://github.com/rikiDalvarez/feedbackr) who worked on testing for the project. Contributors included:
+1. [Ricardo D Alvarez](https://github.com/rikiDalvarez)
+2. [Marijana Del Bianco] (https://github.com/mjdelbianco)
+3. [Mohammed Abdul Khader](https://github.com/MohammedAK1991)
+4. Martin Rodl
