@@ -1,5 +1,5 @@
 # What is Feedbackr
-It's a web application where we can create multiple choice quizzes, share them, and ofcourse, try these quizzes and see how well we did using the score report feature.
+It's a web application where we can create multiple choice quizzes, share them, and ofcourse, try these quizzes and see how well we did using the score report feature. In today's world of online teaching, I found that a lot of teachers were having to manually create assignments on Google Classroom or Microsoft teams. These tools also only allow for basic text and multiple choice answer types. This project was started to create a platform where teachers can share assignments they built with each other so that they can spend more time with their students, and less time building assignments that their collegues have already built.
 
 # Getting started
 1. Fork the repo and clone your fork to your development environment
@@ -12,11 +12,36 @@ And that's it!! Happy coding
 
 # The App itself
 ## The create a quiz page
-![Create Quiz](https://drive.google.com/file/d/1xpDRe9PW1J7cqxDNbx1ZHLPfXuHfQblf/view?usp=sharing)
+![Create Quiz]()
+
+## The view quizzes page
+![Create Quiz]()
+
+## The quiz page
+![Create Quiz]()
+
+# Observations
+## Improvements on the current code base
+* The SASS could do with a bit of refactoring, the SCSS is not as DRY as it could be
+* Setting up multipart questions
+* Use Redux for better state management
+* Allow for the name of quiz to be saved before questions start being made
+* Unit testing could have made development smoother
+* Move to a relational database because the data is more... well relational
+
+## The Future
+* Add a page where teacher's can request for extra features to be added
+* Add authentication to allow teachers and students to have their own profiles and have a record of the quizzes they've made, saved and completed, along with a historical score report
+* Create a question type library - so that quizzes can be more dynamic. Examples of question types include
+ 1. Matching questions to answers
+ 2. Drawing out chemical formulas
+ 3. Diagram annotation
+ 4. Graph creation
+* Allow for PDF to quiz converters so that teachers can turn past papers (that are publicly and freely available) into online quizzes
 
 # Collaborators
 Checkout [https://github.com/rikiDalvarez/feedbackr](https://github.com/rikiDalvarez/feedbackr) who worked on testing for the project. Contributors included:
 1. [Ricardo D Alvarez](https://github.com/rikiDalvarez)
-2. [Marijana Del Bianco] (https://github.com/mjdelbianco)
+2. [Marijana Del Bianco](https://github.com/mjdelbianco)
 3. [Mohammed Abdul Khader](https://github.com/MohammedAK1991)
 4. Martin Rodl
