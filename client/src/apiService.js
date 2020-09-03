@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';
 
 export const getAllQuizzes = async function (setDb) {
   fetch(`${BASE_URL}/quizzes`)
