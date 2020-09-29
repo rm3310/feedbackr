@@ -17,6 +17,88 @@ body {
 * {
   font-family: "B612"; }
 
+.navbar__ul {
+  display: flex;
+  margin-left: auto;
+  align-items: stretch;
+  width: max-content; }
+  .navbar__ul li {
+    list-style: none;
+    display: flex;
+    align-items: stretch;
+    margin-right: 3rem; }
+    .navbar__ul li a {
+      padding: 0 3rem;
+      text-decoration: none;
+      font-family: "B612";
+      font-weight: 400;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center; }
+      .navbar__ul li a:visited {
+        color: #ECECEC; }
+    .navbar__ul li:hover {
+      background-color: #a61e4d;
+      color: #e67700;
+      transition: all .2s; }
+  @media (max-width: 768px) {
+    .navbar__ul {
+      display: none;
+      flex-flow: column nowrap;
+      background-color: darkgray;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 30rem; } }
+
+.navbar__burger {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap; }
+  .navbar__burger .line {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: #fff; }
+  @media (min-width: 768px) {
+    .navbar__burger {
+      display: none; } }
+
+.navbar__hamburger-ul {
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  width: 10rem;
+  background-color: #087f5b;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  width: max-content;
+  transform: translate(3rem, -2rem); }
+  .navbar__hamburger-ul li {
+    list-style: none;
+    display: flex;
+    align-items: stretch;
+    padding: 1rem; }
+    .navbar__hamburger-ul li a {
+      padding: 0 3rem;
+      text-decoration: none;
+      font-family: "B612";
+      font-weight: 400;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center; }
+      .navbar__hamburger-ul li a:visited {
+        color: #ECECEC; }
+    .navbar__hamburger-ul li:hover {
+      background-color: #a61e4d;
+      color: #e67700;
+      transition: all .2s; }
+
 .submit {
   border: none;
   transition: all .2s;
@@ -153,31 +235,6 @@ body {
     color: #ECECEC;
     font-family: "Patua One";
     font-size: 4rem; }
-    .navbar .logo img {
-      height: 100%; }
-  .navbar ul {
-    display: flex;
-    margin-left: auto;
-    align-items: stretch; }
-    .navbar ul li {
-      list-style: none;
-      display: flex;
-      align-items: stretch;
-      margin-right: 3rem; }
-      .navbar ul li a {
-        padding: 0 3rem;
-        text-decoration: none;
-        font-family: "B612";
-        font-weight: 400;
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center; }
-        .navbar ul li a:visited {
-          color: #ECECEC; }
-      .navbar ul li:hover {
-        background-color: #a61e4d;
-        color: #e67700;
-        transition: all .2s; }
 
 .create-quiz {
   display: grid;

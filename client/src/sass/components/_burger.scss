@@ -1,0 +1,62 @@
+.navbar {
+  &__burger {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+
+    .line {
+      width: 2rem;
+      height: 0.25rem;
+      background-color: #fff;
+    }
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__hamburger-ul {
+    position: absolute;
+    top: 6rem;
+    right: 0;
+    width: 10rem;
+    background-color: $color-cool-dark;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    width: max-content;
+    transform: translate(3rem, -2rem);
+
+    li {
+      list-style: none;
+      display: flex;
+      align-items: stretch;
+      padding: 1rem;
+
+      a {
+        padding: 0 3rem;
+        text-decoration: none;
+        font-family: $font-main;
+        font-weight: 400;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+
+        &:visited {
+          color: $color-text-light
+        }
+      }
+
+      &:hover {
+        background-color: $color-warm-dark;
+        color: $color-warm-light;
+        transition: all .2s;
+      }
+    }
+  }
+}

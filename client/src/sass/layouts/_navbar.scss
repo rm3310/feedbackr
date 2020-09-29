@@ -15,42 +15,5 @@
     color: $color-text-light;
     font-family: $font-logo;
     font-size: 4rem;
-    
-    img {
-      height: 100%;
-    }
-  }
-
-  ul {
-    display: flex;
-    margin-left: auto;
-    align-items: stretch;
-
-    li {
-      list-style: none;
-      display: flex;
-      align-items: stretch;
-      margin-right: 3rem;
-
-      a {
-        padding: 0 3rem;
-        text-decoration: none;
-        font-family: $font-main;
-        font-weight: 400;
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center;
-
-        &:visited {
-          color: $color-text-light
-        }
-      }
-
-      &:hover {
-        background-color: $color-warm-dark;
-        color: $color-warm-light;
-        transition: all .2s;
-      }
-    }
   }
 }

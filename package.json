@@ -5,10 +5,10 @@
   "main": "./server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build:client && npm run build:server",
-    "start": "npm start --prefix server",
     "build:client": "cd client && npm i && npm run build",
-    "build:server": "cd server && npm i"
+    "build:server": "cd server && npm i",
+    "build": "npm run build:client && npm run build:server",
+    "start": "npm start --prefix server"
   },
   "repository": {
     "type": "git",
