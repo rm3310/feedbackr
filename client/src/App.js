@@ -28,10 +28,10 @@ function App() {
     <Router>
       <div className="App">
         <NavBar/>
+        <Route path="/" render={(props)=> <QuizList {...props} quizList={db}/>}></Route>
         <Route path="/create-quiz" render={(props)=> <CreateQuizMain {...props} quiz={quiz} setQuiz={setQuiz} db={db} setDb={setDb}/>}></Route>
         <Route path="/do-quiz" render={(props)=> <DoQuiz {...props} quiz={quiz}/>}></Route>
         <Route path="/view-quizzes" render={(props)=> <QuizList {...props} quizList={db}/>}></Route>
-        {/* footer */}
       </div>
     </Router>  
   );
