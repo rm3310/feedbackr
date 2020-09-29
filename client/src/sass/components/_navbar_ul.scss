@@ -9,15 +9,16 @@
       list-style: none;
       display: flex;
       align-items: stretch;
-      margin-right: 3rem;
+      margin-right: 2rem;
 
       a {
-        padding: 0 3rem;
+        padding: 0 1rem;
         text-decoration: none;
         font-family: $font-main;
         font-weight: 400;
         font-size: 1.5rem;
         display: flex;
+        text-align: center;
         align-items: center;
 
         &:visited {
@@ -32,7 +33,7 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1050px) {
       display: none;
       flex-flow: column nowrap;
       background-color: darkgray;

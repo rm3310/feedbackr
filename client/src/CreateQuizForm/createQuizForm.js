@@ -36,7 +36,7 @@ function CreateQuizForm (props) {
 
   return (
     <div className="create-quiz__details">
-      <p>Quiz Name:</p>
+      <p>Quiz Name</p>
       {isDisabled===false ?
       <input type="text" value={quiz.name} onChange={handleQuizName} required></input> :
       <input type="text" value={quiz.name} onChange={handleQuizName} required disabled></input>

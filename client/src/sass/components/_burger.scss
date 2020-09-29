@@ -15,7 +15,7 @@
       background-color: #fff;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1050px) {
       display: none;
     }
   }
@@ -30,7 +30,7 @@
     flex-flow: column nowrap;
     align-items: stretch;
     width: max-content;
-    transform: translate(3rem, -2rem);
+    transform: translate(3rem, -1.5rem);
 
     li {
       list-style: none;

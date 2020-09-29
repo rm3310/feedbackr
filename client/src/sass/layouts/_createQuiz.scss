@@ -1,11 +1,18 @@
 .create-quiz {
-  display: grid;
-  grid-template-columns: 3rem [full-start] 1fr [mid] 1fr [full-end] 3rem;
-  grid-template-rows: 7rem 1fr;
+  // display: grid;
+  // grid-template-columns: 3rem [full-start] 1fr [mid] 1fr [full-end] 3rem;
+  // grid-template-rows: 7rem 1fr;
+  
+  //
+  padding: 0 2rem;
+  display: flex;
+  flex-flow: column;
+  //
 
   &__details {
-    grid-column: full-start / full-end;
-    grid-row: 1 / 2;
+    // grid-column: full-start / full-end;
+    // grid-row: 1 / 2;
+    height: 7rem;
     border-radius: 0 0 2rem 2rem;
     align-self: stretch;
     display: flex;
@@ -14,19 +21,45 @@
       align-self: center;
       font-size: 1.4rem;
     }
+
+    p {
+      text-align: right;
+    }
+
+    button {
+      margin-right: 3rem;
+    }
+  }
+
+  &__flex {
+    display: flex;
+
+    @media (max-width: 1050px) {
+      flex-direction: column;
+    }
   }
 
   &__create-question-form {
-    grid-column: full-start / mid;
-    grid-row: 2;
+    // grid-column: full-start / mid;
+    // grid-row: 2;
+    flex: 1;
     margin: 2.5rem 1rem 2.5rem 0;
+
+    @media (max-width: 1050px) {
+      margin: 2.5rem 0;
+    }
   }
 
   &__quiz-preview {
-    grid-column: mid / full-end;
-    grid-row: 2;
-    margin: 2.5rem 0 2.5rem 1rem;
+    // grid-column: mid / full-end;
+    // grid-row: 2;
+    flex: 1;
     border-radius: 2rem;
+    margin: 2.5rem 0 2.5rem 1rem;
+
+    @media (max-width: 1050px) {
+      margin: 0;
+    }
 
     h3 {
       color: $color-cool-dark;

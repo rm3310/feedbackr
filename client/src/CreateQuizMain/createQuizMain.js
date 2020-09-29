@@ -46,19 +46,20 @@ function CreateQuizMain (props) {
     <div className="create-quiz">
       <CreateQuizForm quiz={quiz} setQuiz={setQuiz} quizId={quizId} setQuizId={setQuizId}/>
       
-      <div className="create-quiz__create-question-form">
-        <CreateQuestionForm handleQuestionSubmit={handleQuestionSubmit} question={question} setQuestion={setQuestion} questionInitialState={questionInitialState}/>
-      </div>
+      <div className="create-quiz__flex">
+        <div className="create-quiz__create-question-form">
+          <CreateQuestionForm handleQuestionSubmit={handleQuestionSubmit} question={question} setQuestion={setQuestion} questionInitialState={questionInitialState}/>
+        </div>
 
-      <div className="create-quiz__quiz-preview">
-        <h3>Next question Preview</h3>
-        <CreateQuestionPreview question={question} />
-        <h3>Quiz Preview</h3>
-        <ViewQuiz quiz={quiz} />
+        <div className="create-quiz__quiz-preview" id="preview">
+          <h3>Next question Preview</h3>
+          <CreateQuestionPreview question={question} />
+          <h3>Quiz Preview</h3>
+          <ViewQuiz quiz={quiz} />
+          <div className="stack-top"></div>
+        </div>
       </div>
-      <div className="create-quiz__quiz-preview stack-top"></div>
     </div>
-
   )
 }
 
