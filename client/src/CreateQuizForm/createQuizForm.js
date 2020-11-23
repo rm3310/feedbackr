@@ -26,7 +26,6 @@ function CreateQuizForm (props) {
         ...quiz
       }
     }
-    console.log('quiz after name change', quiz);
   }
 
   const handleCreateQuiz = function () {

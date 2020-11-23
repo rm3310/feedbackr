@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Component imports
 import NavBar from './Navbar/navbar'
@@ -17,8 +17,6 @@ function App() {
   });
 
   const [db, setDb] = useState([]);
-
-  console.log('DATABASE', db);
 
   useEffect(()=>{
     getAllQuizzes(setDb);

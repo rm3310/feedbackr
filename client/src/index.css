@@ -49,59 +49,62 @@ body {
     .navbar__ul {
       display: none;
       flex-flow: column nowrap;
-      background-color: darkgray;
       position: fixed;
       top: 0;
       right: 0;
       width: 30rem; } }
 
-.navbar__burger {
-  width: 2.5rem;
-  height: 2.5rem;
-  position: fixed;
-  top: 1.5rem;
-  right: 2rem;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: column nowrap; }
-  .navbar__burger .line {
-    width: 2rem;
-    height: 0.25rem;
-    background-color: #fff; }
-  @media (min-width: 1050px) {
-    .navbar__burger {
-      display: none; } }
-
-.navbar__hamburger-ul {
-  position: absolute;
-  top: 6rem;
-  right: 0;
-  width: 10rem;
-  background-color: #087f5b;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: stretch;
-  width: max-content;
-  transform: translate(3rem, -1.5rem); }
-  .navbar__hamburger-ul li {
-    list-style: none;
+.navbar {
+  position: fixed; }
+  .navbar__burger {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 2rem 2rem;
     display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap; }
+    .navbar__burger .line {
+      width: 2rem;
+      height: 0.25rem;
+      background-color: #fff; }
+    .navbar__burger:hover {
+      cursor: pointer; }
+      .navbar__burger:hover .line {
+        background-color: #a61e4d;
+        transition: all .2s; }
+    @media (min-width: 1050px) {
+      .navbar__burger {
+        display: none; } }
+  .navbar__hamburger-ul {
+    position: absolute;
+    top: 6rem;
+    right: 0;
+    width: 10rem;
+    background-color: #087f5b;
+    display: flex;
+    flex-flow: column nowrap;
     align-items: stretch;
-    padding: 1rem; }
-    .navbar__hamburger-ul li a {
-      padding: 0 3rem;
-      text-decoration: none;
-      font-family: "B612";
-      font-weight: 400;
-      font-size: 1.5rem;
+    width: max-content;
+    transform: translateX(3rem); }
+    .navbar__hamburger-ul li {
+      list-style: none;
       display: flex;
-      align-items: center; }
-      .navbar__hamburger-ul li a:visited {
-        color: #ECECEC; }
-    .navbar__hamburger-ul li:hover {
-      background-color: #a61e4d;
-      color: #e67700;
-      transition: all .2s; }
+      align-items: stretch;
+      padding: 1rem; }
+      .navbar__hamburger-ul li a {
+        padding: 0 3rem;
+        text-decoration: none;
+        font-family: "B612";
+        font-weight: 400;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center; }
+        .navbar__hamburger-ul li a:visited {
+          color: #ECECEC; }
+      .navbar__hamburger-ul li:hover {
+        background-color: #a61e4d;
+        color: #e67700;
+        transition: all .2s; }
 
 .submit {
   border: none;

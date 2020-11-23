@@ -9,14 +9,13 @@ function MultipleChoicePreview (props) {
 
   const handleAnswerSelect = function (event) {
     event.persist();
+    console.log(event.target)
     const isCorrectAnswer = question.correctAnswer == event.target.value ? true : false;
-    console.log("quizAnwers", quizAnswers);
     setQuizAnswers(prevState => {
-      console.log('prevState of quizAnswers', prevState);
       const newState = [...prevState];
-      console.log('newState of quizAnswers', newState);
       newState[questionIndex].selectedAnswer.value = event.target.value;
       newState[questionIndex].selectedAnswer.correct = isCorrectAnswer;
+      console.log('State of quizAnswers', newState);
       return newState;
     })
   }
@@ -28,12 +27,12 @@ function MultipleChoicePreview (props) {
         <div key={`${index}${answerOption.label}`} className="multiple-choice-preview__options">
           <input
             type="radio"
-            id={index}
+            id={`${questionIndex}${index}`}
             value={answerOption.value}
             onChange={handleAnswerSelect}
             name={question.question}
             />
-          <label htmlFor={index}>{String.fromCharCode(index+65)}: {answerOption.label}</label>
+          <label htmlFor={`${questionIndex}${index}`}>{String.fromCharCode(index+65)}: {answerOption.label}</label>
         </div>
       )}
     </div>
