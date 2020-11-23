@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 // Component imports
 import NavBar from './Navbar/navbar'
@@ -29,6 +29,9 @@ function App() {
         <Route path="/create-quiz" render={(props)=> <CreateQuizMain {...props} quiz={quiz} setQuiz={setQuiz} db={db} setDb={setDb}/>}></Route>
         <Route path="/do-quiz" render={(props)=> <DoQuiz {...props} quiz={quiz}/>}></Route>
         <Route path="/view-quizzes" render={(props)=> <QuizList {...props} quizList={db}/>}></Route>
+        <Route exact path="/">
+          <Redirect to="/view-quizzes" />
+        </Route>
       </div>
     </Router>  
   );
